@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  # root "index"
+  devise_for :users
 end
