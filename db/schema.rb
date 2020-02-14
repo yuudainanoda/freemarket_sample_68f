@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 2020_02_13_023027) do
-=======
+
 ActiveRecord::Schema.define(version: 2020_02_14_015218) do
->>>>>>> Stashed changes
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,5 +29,4 @@ ActiveRecord::Schema.define(version: 2020_02_14_015218) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end
