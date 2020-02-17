@@ -14,7 +14,11 @@
         =link_to "#" , class:"header__box__navi__left__brand" do
           ブランド
       .header__box__navi__right
-        =link_to new_user_session_path , class:"header__box__navi__right__login" do
-          ログイン
-        =link_to new_user_registration_path , class:"header__box__navi__right__new" do
-          新規会員登録
+        - if user_signed_in?
+          =link_to destroy_user_session_path , method: :delete, class:"header__box__navi__right__new" do
+            ログアウト
+        - else
+          =link_to new_user_session_path , class:"header__box__navi__right__login" do
+            ログイン
+          =link_to new_user_registration_path , class:"header__box__navi__right__new" do
+            新規会員登録
