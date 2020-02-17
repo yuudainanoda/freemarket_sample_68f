@@ -1,0 +1,135 @@
+.exhibition-container{
+  height: 128px;
+  &__header{
+    margin: 40px 0 0;
+    text-align: center;
+    &__logo{
+      &__image{
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+      }
+    }
+  }
+
+  &__main{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+
+    &__item-profile{
+      background-color: brown;
+      width: 700px;
+      margin: 0 auto;
+
+      &__header{
+        background-color: yellow;
+        padding: 32px 16px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      &__sell-form{
+        border-top: 1px solid #eee;
+
+        &__upload{
+          width: 620px;
+          padding: 40px;
+
+          &__head{
+            font-weight: bold;
+            display: flex;
+            .title{
+
+            }
+            .form-require{
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+
+            }
+          }
+          .attention{
+            margin: 8px 0 0;
+            line-height: 1.5;
+          }
+
+          &__image-10{
+
+          }
+        }
+      }
+      &__sell-contents{
+        background-color: yellowgreen;
+        padding: 40px;
+        &__name{
+          font-weight: bold;
+          display: flex;
+          .title{
+
+          }
+          .form-require{
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+
+          }
+        }
+        &__description{
+          font-weight: bold;
+          display: flex;
+          .title{
+
+          }
+          .form-require{
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+
+          }
+
+        }
+      }
+    }
+  }
+  &__footer{
+    text-align: center;
+
+    &__lists{
+      &__list{
+        margin: 0px 10px;
+        font-size: 12px;
+        color: black;
+        text-decoration: none;
+      }
+    }
+    &__logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+
+      &__image{
+        width: 185px;
+        height: 49px;
+      }
+    }
+    &__ending{
+      font-size: 13px;
+      text-align: center;
+
+    }
+  }
+}
+
+
