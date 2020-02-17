@@ -31,6 +31,13 @@
                   =check_box_tag :check
                   =label_tag :check, type="パスワードを表示する", class: "pass"
           .field
+            = f.label :確認用パスワード
+            %span.require 必須
+            %br/
+            .field-input
+              = f.password_field :password_confirmation, autocomplete: "off", class: "input-area"
+           
+          .field
             %h3
               本人確認
             %p.ident
