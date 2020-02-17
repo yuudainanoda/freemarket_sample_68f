@@ -1,0 +1,104 @@
+.sign_in{
+  .header{
+    .single-header{
+      
+      padding: 24px 32px;
+      text-align: center;
+    }   
+  }
+  .main{
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    .login-panel{
+      max-width: 456px;
+      margin: 0 auto;
+      background: #fff;
+      .login-no-account{
+        padding: 24px 32px;
+        text-align: center;
+        .text{
+          font-size: 14px
+        }
+        .new{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+        }
+      }
+    }
+    .login-form-inner{
+      padding: 24px 32px;
+      border-top: 1px solid #eee;
+      text-align: center;
+      .facebook-login{
+        background: #385185;
+        color: #fff;
+        line-height: 40px;
+        .facebook-login__btn{
+          display: inline-block;
+          font-family: 'icon-font';
+          speak: none;
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+        }
+      }
+      .Google-login{
+        display: block;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background:white;
+        color: black;
+        line-height: 40px;
+
+        }
+      }
+
+
+
+
+    .login-form-down{
+      text-align: center;
+      background-color: cadetblue;
+      .mail{
+        background-color: blue;
+      }  
+      .pass{
+        background-color: chartreuse;
+      }
+    }
+  }
+
+
+
+  .footer{
+    .single-footer{
+      background-color: dimgrey;
+      // position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 250px;
+      padding: 40px 0;
+      text-align: center;
+      .clearfix{
+        background-color: chocolate;
+      }
+      .single-footer-logo{
+        background-color: darkgray;
+      }
+      .last{
+        background-color:white;
+      }
+    }
+
+  } 
+}
