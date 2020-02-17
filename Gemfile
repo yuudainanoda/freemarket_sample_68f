@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -79,4 +80,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'fog-aws'
-
+gem 'pry-byebug'
+gem 'pry-rails'

@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(sing_up_params)
+    binding.pry
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
@@ -90,7 +91,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  
+  end
   #  protected
   #  def telephone_params
   #  params.require(:telephone).permit(:telephone)

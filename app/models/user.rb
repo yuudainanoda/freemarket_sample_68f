@@ -14,10 +14,10 @@ class User < ApplicationRecord
   # has_many   :message_items,through::messages,source::item
   # has_many   :like_items,through::likes,source::item
   # has_many   :flag_items,through::flags,source::item
-  belongs_to :prefecture
+  # belongs_to :prefecture
   # belongs_to :rate
   # belongs_to :telephone
-  validates  :nickname,:password,:birth_year,:birth_month,:birth_day,presence: true
+  validates  :nickname,:birth_year,:birth_month,:birth_day,presence: true
    # メールの正規表現
   # validates :email, presence: true, length: { maximum: 255 },uniqueness: true
   # format: { with: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/}
