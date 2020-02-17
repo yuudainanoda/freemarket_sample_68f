@@ -3,17 +3,6 @@
     .header-icon
       = link_to root_path do
         = image_tag "logo.png"
-    .signup__header__info
-      %ol
-        %li.active
-          会員情報
-          .progress-status.active
-        %li
-          電話番号認証
-          .progress-status
-        %li
-          完了
-          .progress-status
   .signup__main
     .section
       %h2 会員情報入力
@@ -24,8 +13,7 @@
             = f.label :ニックネーム
             %span.require 必須
             %br/
-            -# カラム作成後修正項目
-            = f.email_field :email, autofocus: true, class: "input-area", placeholder: "例）メルカリ太郎"
+            = f.text_field :nickname, autofocus: true, class: "input-area", placeholder: "例）メルカリ太郎"
           .field
             = f.label :メールアドレス
             %span.require 必須
@@ -39,57 +27,83 @@
             .check-field
               %p ※ 英字と数字の両方を含めて設定してください
               .check-box
-                = f.check_box :remember_me, class: "icon-check"
-                = f.label :パスワードを表示する
+                %label
+                  =check_box_tag :check
+                  =label_tag :check, type="パスワードを表示する", class: "pass"
           .field
             %h3
               本人確認
-            %p.text
+            %p.ident
               安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           .field
             = f.label :お名前（全角）
             %span.require 必須
             %br/
             .name
-              -# カラム作成後修正項目
-              = f.email_field :email, autocomplete: "new-password",class: "input-half left", placeholder: "例）山田"
+              = f.text_field :first_name, class: "input-half left", placeholder: "例）山田"
               %br/
-              -# カラム作成後修正項目
-              = f.email_field :email, autocomplete: "new-password",class: "input-half", placeholder: "例）太郎"
+              = f.text_field :last_name, class: "input-half", placeholder: "例）太郎"
           .field
             = f.label :お名前（全角） 
             %span.require 必須
             %br/
             .name
-              -# カラム作成後修正項目
-              = f.email_field :email, autocomplete: "new-password",class: "input-half left", placeholder: "例）山田"
+              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）山田"
               %br/
-              -# カラム作成後修正項目
-              = f.email_field :email, autocomplete: "new-password",class: "input-half", placeholder: "例）太郎"
+              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）太郎"
           .field
             = f.label :生年月日
             %span.require 必須
             .birth-select
               .birth--year
-              -# カラム作成後修正項目
-              = f.select :email, [*(1900..2018)],prompt:"--"
+              = f.select :birth_year, [*(1900..2018)], prompt:"--"
               %span.birth
                 年
               .birth--month
-              -# カラム作成後修正項目
-              = f.select :email, [*(1..12)],prompt:"--"
+              = f.select :birth_month, [*(1..12)], prompt:"--"
               %span.birth
                 月
               .birth--day
-              -# カラム作成後修正項目
-              = f.select :email, [*(1..31)],prompt:"--"
+              = f.select :birth_day, [*(1..31)], prompt:"--"
               %span.birth
                 日
-          %p
+          %p.ident
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .content
-          %p
-            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+          %div.info
+            「次へ進む」のボタンを押すことにより、
+            %span.bule
+            = link_to "#" do
+              利用規約
+            に同意したものとみなします
           .actions
-            = link_to edit_user_password_path do
-              = f.submit "登録する"
+            = f.submit "登録する", class: "signup-submit"
+          %div.text
+            = link_to "#" do
+              本人情報の登録について
+          %div.privacy
+            This site is protected by reCAPTCHA and the Google 
+            %span.Policy
+            = link_to "#" do
+              Privacy Policy 
+            and 
+            %span.Service
+            = link_to "#" do
+              Terms of Service 
+            apply.
+  .signup__footer
+    %ul
+      %li
+      = link_to "#" do
+        プライバシーポリシー
+      %li
+      = link_to "#" do
+        フリマ利用規約
+      %li
+      = link_to "#" do
+        特定商取引に関する表記
+    .footer-icon
+      = link_to "#" do
+        = image_tag "logo-white.png", class: "hurima-icon"
+      %p
+        © Furima, Inc.
