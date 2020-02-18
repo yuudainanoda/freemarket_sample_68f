@@ -62,9 +62,12 @@ Things you may want to cover:
 |id|||
 |rating|string||
 
+
 ### Association
+- has_many :items
 - has_many :users
-- has_many :rate_counts
+
+
 
 ## rate_countsテーブル
 
@@ -73,12 +76,13 @@ Things you may want to cover:
 |id|||
 |rating_id|reference|foreign_key: true|
 |user_id|reference|foreign_key: true|
-|order_id|reference|foreign_key: true|
+|item_id|reference|foreign_key: true|
 |message|text||
 
+
 ### Association
+- has_many :items
 - has_many :users
-- has_many :orders
 
 
 ## prefecturesテーブル
@@ -88,19 +92,35 @@ Things you may want to cover:
 |id|||
 |prefecture|string|null:false,unique|
 
+
 ### Association
 - has_many :items
 - has_many :users
 
 
 ## pointsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |id|||
 |amount|integer||
+|user_id|reference|foreign_key: true|
+|point_limit_id|reference|foreign_key: true|
+
 
 ### Association
 - belongs_to :user
+
+
+## point_limitテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|||
+|point_limit|string||
+
+### Association
+- has_many :points
 
 
 ## profitsテーブル
@@ -108,10 +128,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|profit|integer||
+|prpfit|integer||
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
 |trade_end_date|daytime||
+
 
 ### Association
 - belongs_to :item
@@ -126,12 +147,15 @@ Things you may want to cover:
 |message|text||
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
+|seller|boolean||
 |order_status_id|reference|foreign_key: true|
+
 
 ### Association
 - belongs_to :item
 - belongs_to :user
 - belongs_to :order_status
+
 
 ## likesテーブル
 
@@ -141,10 +165,22 @@ Things you may want to cover:
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
 
+
 ### Association
 - belongs_to :item
 - belongs_to :user
 
+
+## flagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|||
+|user_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :user
 
 ## itemsテーブル
 
@@ -155,21 +191,24 @@ Things you may want to cover:
 |name|string|null:false|
 |price|integer|null:false|
 |description|text|null:false|
-|first_category_id|reference|foreign_key:true|p
+|category1_id|reference|foreign_key:true|
 |brand_id|reference|foreign_key:true|
 |size_id|reference|foreign_key:true|
 |condition_id|reference|foreign_key:true|
-|delivery_charge_id|reference|foreign_key:true|
+|delivery_charge|reference|foreign_key:true|
 |prefecure_id|reference|foreign_key:true|
 |delivery_dates_id|reference|foreign_key:true|
 |order_status_id|reference|foreign_key:true|
+
 
 ### Association
 - has_many :item_images
 - has_many :messages
 - has_many :likes
+- has_many :flags
 - has_many :message_users,through::messages,source::user
 - has_many :like_users,through::likes,source::user
+- has_many :flag_users,through::flags,source::user
 - belongs_to :order
 - belongs_to :profit
 - belongs_to :prefecture
@@ -182,6 +221,7 @@ Things you may want to cover:
 - belongs_to :order_status
 - belongs_to :size
 
+
 ## item_imageテーブル
 
 |Column|Type|Options|
@@ -189,6 +229,7 @@ Things you may want to cover:
 |id|||
 |image|text|null:false|
 |item_id|reference|null:false,foreign_key:true|
+
 
 ### Association
 - belongs_to :item
@@ -203,10 +244,11 @@ Things you may want to cover:
 |item_id|reference|null:false,foreign_key:ture|
 |seller_id|reference|null:false,foreign_key:ture|
 
+
 ### Association
-- has_many :rate_counts
 - belongs_to :user
 - belongs_to :item
+
 
 ## fisrt_categoriesテーブル
 
@@ -214,6 +256,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|||
 |first_category|string|null:false|
+
 
 ### Association
 - has_many :items
@@ -291,7 +334,6 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|||
 |brand_id|reference|foreign_key:ture|
 |first_category_id|reference|foreign_key:ture|
 
@@ -341,4 +383,3 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :messages
