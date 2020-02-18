@@ -219,7 +219,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|first_category|string|null:false|
+|category|string|null:false|
+|acentry|string|null:false|
 
 
 ### Association
