@@ -6,8 +6,9 @@
     .appBanner__inner__icon
       = link_to "#" do
         = image_tag asset_path("duellinks03.png")
-      = link_to "/assets/Google-Play-Badge.png" do
-        実験２
+      = link_to "#" do
+        = image_tag asset_path("Google-Play-Badge.png") 
+        
       
 .footer
   %ul.footer__contents
@@ -35,5 +36,5 @@
         FURIMAロゴ利用ガイドライン
       = link_to "#" , class:"osirase" do
         お知らせ
-  = image_tag src="logo-white.png" , class:"footer__logo"
+  = image_tag asset_path("logo-white.png") , class:"footer__logo"
   %p© FURIMA
