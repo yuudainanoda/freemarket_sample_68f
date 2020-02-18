@@ -6,9 +6,9 @@
       FURIMAは誰でもかんたんに出品・購入できるフリマアプリです
     .mainvisual__content__btn 
       = link_to "" do    
-        = image_tag src="/assets/duellinks03.png", size: "180x53", class: "mainvisual__content__btn__abtn"
+        = image_tag asset_path("duellinks03.png"), size: "180x53", class: "mainvisual__content__btn__abtn"
       = link_to "" do
-        = image_tag src="/assets/Google-Play-Badge.png", size: "180x53", class: "mainvisual__content__btn__gbtn"
+        = image_tag asset_path("Google-Play-Badge.png"), size: "180x53", class: "mainvisual__content__btn__gbtn"
     .mainvisual__content__pict
   
 
@@ -22,7 +22,7 @@
         .number
           1 
         .image  
-          = image_tag src="/assets/pict-reason-01.jpg", size: "306x306", class: "introduction__lists__tag__pict"
+          = image_tag asset_path("pict-reason-01.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
           
       
       .introduction__lists__tag__text
@@ -36,7 +36,7 @@
         .number
           2 
         .image  
-          = image_tag src="/assets/pict-reason-02.jpg", size: "306x306", class: "introduction__lists__tag__pict"
+          = image_tag asset_path("pict-reason-02.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
           
       .introduction__lists__tag__pict
       .introduction__lists__tag__text
@@ -50,7 +50,7 @@
         .number
           3 
         .image  
-          = image_tag src="/assets/pict-reason-03.jpg", size: "306x306", class: "introduction__lists__tag__pict"
+          = image_tag asset_path("pict-reason-03.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
           
       .introduction__lists__tag__pict
       .introduction__lists__tag__text
@@ -71,10 +71,10 @@
     .mainvisual__content__text
       FURIMAは誰でもかんたんに出品・購入できるフリマアプリです
     .mainvisual__content__btn 
-      = link_to "" do
-        = image_tag src="/assets/duellinks03.png", size: "180x53", class: "mainvisual__content__btn__abtn"
-      = link_to "" do
-        = image_tag src="/assets/Google-Play-Badge.png", size: "180x53", class: "mainvisual__content__btn__gbtn"
+      = link_to "#" do
+        = image_tag asset_path("duellinks03.png"), size: "180x53", class: "mainvisual__content__btn__abtn"
+      = link_to "#" do
+        = image_tag asset_path("Google-Play-Badge.png"), size: "180x53", class: "mainvisual__content__btn__gbtn"
     .mainvisual__content__pict
 
 
@@ -85,7 +85,7 @@
     .midle__lists__tag
       .midle__lists__tag__src
         .image  
-          = image_tag src="/assets/icon-01.png", size: "306x306", class: "midle__lists__tag__pict"  
+          = image_tag asset_path("icon-01.png"), size: "306x306", class: "midle__lists__tag__pict"  
       .midle__lists__tag__text   
         簡単に売り買いできる
       .midle__lists__tag__comment
@@ -93,7 +93,7 @@
     .midle__lists__tag
       .midle__lists__tag__src
         .image  
-          = image_tag src="/assets/icon-03.png", size: "306x306", class: "midle__lists__tag__pict"           
+          = image_tag asset_path("icon-03.png"), size: "306x306", class: "midle__lists__tag__pict"           
       .midle__lists__tag__pict
       .midle__lists__tag__text
         売上金は即日振り込みに対応
@@ -103,7 +103,7 @@
     .midle__lists__tag
       .midle__lists__tag__src 
         .image  
-          = image_tag src="/assets/icon-04.png", size: "306x306", class: "midle__lists__tag__pict"    
+          = image_tag asset_path("icon-04.png"), size: "306x306", class: "midle__lists__tag__pict"    
       .midle__lists__tag__pict
       .midle__lists__tag__text
         様々な支払いに対応
@@ -128,7 +128,7 @@
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#" , class: "line" do
           .pickupcontainer__productbox__productlists__productlist__img
-            = image_tag "a007.png"
+            = image_tag asset_path("a007.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product3
@@ -147,7 +147,7 @@
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#" , class: "line"  do
           .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a004.png"
+            = image_tag asset_path("a004.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product2
@@ -165,7 +165,7 @@
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#" , class: "line"  do
           .pickupcontainer__productbox__productlists__productlist__img
-            = image_tag "a001.png"
+            = image_tag asset_path("a001.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product1
@@ -190,13 +190,13 @@
     ピックアップブランド
   .pickupcontainer__productbox
     .pickupcontainer__productbox__producthead
-      -# = link_to item_path(@item), class: "line"  do
-      -#   新規投稿商品
+      = link_to "#", class: "line"  do
+        新規投稿商品
     .pickupcontainer__productbox__productlists
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#", class: "line" do
           .pickupcontainer__productbox__productlists__productlist__img
-            = image_tag "a007.png"
+            = image_tag asset_path("a007.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product3
@@ -215,7 +215,7 @@
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#", class: "line" do
           .pickupcontainer__productbox__productlists__productlist__img
-            = image_tag "a004.png"
+            = image_tag asset_path("a004.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product2
@@ -233,7 +233,7 @@
       .pickupcontainer__productbox__productlists__productlist
         = link_to "#", class: "line" do
           .pickupcontainer__productbox__productlists__productlist__img
-            = image_tag "a001.png"
+            = image_tag asset_path("a001.png")
           .pickupcontainer__productbox__productlists__productlist__body
             .pickupcontainer__productbox__productlists__productlist__body__name
               product1
