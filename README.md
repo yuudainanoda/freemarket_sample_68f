@@ -44,15 +44,15 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :items
-- has_many :orders
-- has_many :profits
-- has_many :points
-- has_many :messages
-- has_many :likes
-- has_many :addresses
-- has_many :message_items,through::messages,source::item
-- has_many :like_items,through::likes,source::item
+- has_many :items, dependent: :destroy
+- has_many :orders, dependent: :destroy
+- has_many :profits, dependent: :destroy
+- has_many :points, dependent: :destroy
+- has_many :messages, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :addresses, dependent: :destroy
+- has_many :message_items,through::messages,source::item, dependent: :destroy
+- has_many :like_items,through::likes,source::item, dependent: :destroy
 - belongs_to :rate
 
 
@@ -67,8 +67,8 @@ Things you may want to cover:
 |zip_code|integer|null:false|
 
 ### Association
-- has_many :items
-- has_many :orders
+- has_many :items, dependent: :destroy
+- has_many :orders, dependent: :destroy
 - belongs_to :user
 
 
@@ -79,8 +79,8 @@ Things you may want to cover:
 |rating|string||
 
 ### Association
-- has_many :items
-- has_many :users
+- has_many :items, dependent: :destroy
+- has_many :users, dependent: :destroy
 
 
 ## rate_countsテーブル
@@ -94,8 +94,8 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :users
-- has_many :orders
+- has_many :users, dependent: :destroy
+- has_many :orders, dependent: :destroy
 
 
 ## pointsテーブル
@@ -171,11 +171,11 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :item_images
-- has_many :messages
-- has_many :likes
-- has_many :message_users,through::messages,source::user
-- has_many :like_users,through::likes,source::user
+- has_many :item_images, dependent: :destroy
+- has_many :messages, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :message_users,through::messages,source::user, dependent: :destroy
+- has_many :like_users,through::likes,source::user, dependent: :destroy
 - has_one :profit
 - belongs_to :order
 - belongs_to :address
@@ -186,6 +186,7 @@ Things you may want to cover:
 - belongs_to :delivery_date
 - belongs_to :order_status
 - belongs_to :size
+- belongs_to :category
 
 
 ## item_imageテーブル
@@ -210,7 +211,7 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :rate_counts
+- has_many :rate_counts, dependent: :destroy
 - belongs_to :user
 - belongs_to :item
 
@@ -224,7 +225,7 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## sizesテーブル
@@ -237,7 +238,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :size_category
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## size_categoriesテーブル
@@ -258,7 +259,7 @@ Things you may want to cover:
 |brand|string|unique|
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## conditionsテーブル
@@ -268,7 +269,7 @@ Things you may want to cover:
 |condition|string||
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## delivery_chargesテーブル
@@ -278,7 +279,7 @@ Things you may want to cover:
 |charge|string||
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## delivery_datesテーブル
@@ -289,7 +290,7 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 
 ## order_statusesテーブル
@@ -300,5 +301,5 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :items
-- has_many :messages
+- has_many :items, dependent: :destroy
+- has_many :messages, dependent: :destroy
