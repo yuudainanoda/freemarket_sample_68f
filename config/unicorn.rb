@@ -22,12 +22,18 @@ check_client_connection false
 
 run_once = true
 
-before_fork do |server, worker|
-  defined?(ActiveRecord::Base) &&
-    ActiveRecord::Base.connection.disconnect!
+# before_fork do |server, worker|
+#   defined?(ActiveRecord::Base) &&
+#     ActiveRecord::Base.connection.disconnect!
 
-  if run_once
-    run_once = false # prevent from firing again
+#   if run_once
+#     run_once = false # prevent from firing again
+#   end
+
+before_fork do |server, worker|
+  root = "/var/www/freemarket_sample_68f/current"
+  before_exec do |server|
+    ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
   end
 
   old_pid = "#{server.config[:pid]}.oldbin"
