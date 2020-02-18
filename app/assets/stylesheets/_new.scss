@@ -1,0 +1,184 @@
+.sign_in{
+  position: relative;
+  // min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  .header{
+    .single-header{
+      padding: 24px 32px;
+      text-align: center;
+    }   
+    
+  }
+  .main{
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    
+    .login-panel{
+      max-width: 456px;
+      margin: 0 auto;
+      background: #fff;
+      .login-no-account{
+        padding: 40px 64px;
+        text-align: center;
+        a{
+          text-decoration: none;
+          color: white;
+        }
+        .text{
+          font-size: 14px
+        }
+        .new{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          
+      }
+      }
+    }
+    .login-form-inner{
+    // padding: 24px 32px;
+    // border-top: 1px solid #eee;
+    // text-align: center;
+    padding: 24px 64px 32px;
+    border-top: 1px solid #eee;
+    a{
+      text-decoration: none;
+      color:black;
+    }
+    
+
+      .facebook-login{
+        background: #385185;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        
+
+        .facebook-login__btn{
+          display: inline-block;
+          font-family: 'icon-font';
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-decoration: none;
+          line-height: 1;
+          color: #fff;
+        }
+      }
+      .Google-login{
+        margin: 16px 0 0;
+        border: #979797 solid 1px;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        color: black
+        
+        }
+      }
+  }
+
+  form{
+    .login-form-inner{
+      .form-group{
+        margin: 0;
+        width: 100%;
+        line-height: 40px;
+        margin: 5px  0;
+
+      } 
+      .login{
+        margin: 0;
+        width: 100%;
+        line-height: 40px;
+        background-color: red;
+        margin: 24px 0 0;
+        color: white;
+      }
+      .forget{
+        display: block;
+        margin: 40px 0 0;
+        color: #0099e8;
+      }
+    }
+  }
+
+
+
+  .footer{
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .single-footer{
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 250px;
+      padding: 40px 0;
+      text-align: center;
+      color: black;
+      // .clearfix{
+      //   background-repeat: no-repeat;
+      //   margin: 0;
+      //   padding: 0;
+      //   letter-spacing:10px;
+      //   .privacy{
+      //     letter-spacing:10px;
+      //     margin: 0 10px;
+      //     color: black;
+      //     text-decoration: none;
+      //   }
+      //   .terms{
+      //     letter-spacing:10px;
+      //     margin: 10px 10px;
+      //   }
+      // }
+      ul{
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        list-style: none;
+        padding-right: 40px;
+
+        li{
+          margin: 0 10px;
+        }
+
+      }
+
+      .single-footer-logo{
+        padding: 10px 0;
+      }
+      .last{
+        padding: 10px 0;
+        text-decoration: none;
+      }
+    }
+
+  } 
+}
