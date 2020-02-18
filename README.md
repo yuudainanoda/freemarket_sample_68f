@@ -62,9 +62,11 @@ Things you may want to cover:
 |id|||
 |rating|string||
 
+
 ### Association
 - has_many :users
 - has_many :rate_counts
+
 
 ## rate_countsテーブル
 
@@ -75,6 +77,7 @@ Things you may want to cover:
 |user_id|reference|foreign_key: true|
 |order_id|reference|foreign_key: true|
 |message|text||
+
 
 ### Association
 - has_many :users
@@ -88,6 +91,7 @@ Things you may want to cover:
 |id|||
 |prefecture|string|null:false,unique|
 
+
 ### Association
 - has_many :items
 - has_many :users
@@ -98,6 +102,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|||
 |amount|integer||
+
 
 ### Association
 - belongs_to :user
@@ -112,6 +117,7 @@ Things you may want to cover:
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
 |trade_end_date|daytime||
+
 
 ### Association
 - belongs_to :item
@@ -128,10 +134,12 @@ Things you may want to cover:
 |item_id|reference|foreign_key: true|
 |order_status_id|reference|foreign_key: true|
 
+
 ### Association
 - belongs_to :item
 - belongs_to :user
 - belongs_to :order_status
+
 
 ## likesテーブル
 
@@ -140,6 +148,7 @@ Things you may want to cover:
 |id|||
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
+
 
 ### Association
 - belongs_to :item
@@ -164,6 +173,7 @@ Things you may want to cover:
 |delivery_dates_id|reference|foreign_key:true|
 |order_status_id|reference|foreign_key:true|
 
+
 ### Association
 - has_many :item_images
 - has_many :messages
@@ -182,6 +192,7 @@ Things you may want to cover:
 - belongs_to :order_status
 - belongs_to :size
 
+
 ## item_imageテーブル
 
 |Column|Type|Options|
@@ -189,6 +200,7 @@ Things you may want to cover:
 |id|||
 |image|text|null:false|
 |item_id|reference|null:false,foreign_key:true|
+
 
 ### Association
 - belongs_to :item
@@ -203,10 +215,12 @@ Things you may want to cover:
 |item_id|reference|null:false,foreign_key:ture|
 |seller_id|reference|null:false,foreign_key:ture|
 
+
 ### Association
 - has_many :rate_counts
 - belongs_to :user
 - belongs_to :item
+
 
 ## fisrt_categoriesテーブル
 
@@ -214,6 +228,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|||
 |first_category|string|null:false|
+
 
 ### Association
 - has_many :items
