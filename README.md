@@ -256,7 +256,6 @@ Things you may want to cover:
 |------|----|-------|
 |id|||
 |brand|string|unique|
-|category_id|reference|foreign_key:ture|
 
 ### Association
 - has_many :items
