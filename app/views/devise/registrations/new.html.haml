@@ -51,13 +51,13 @@
               %br/
               = f.text_field :last_name, class: "input-half", placeholder: "例）太郎"
           .field
-            = f.label :お名前（全角） 
+            = f.label :お名前フリガナ（全角） 
             %span.require 必須
             %br/
             .name
-              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）山田"
+              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）ヤマダ"
               %br/
-              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）太郎"
+              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）タロウ"
           .field
             = f.label :生年月日
             %span.require 必須
