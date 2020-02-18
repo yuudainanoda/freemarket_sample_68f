@@ -220,7 +220,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|||
 |category|string|null:false|
-|acentry|string|null:false|
+|ancestry|string|null:false|
 
 
 ### Association
