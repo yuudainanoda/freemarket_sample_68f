@@ -50,9 +50,9 @@ Things you may want to cover:
 - has_many :points
 - has_many :messages
 - has_many :likes
+- has_many :addresses
 - has_many :message_items,through::messages,source::item
 - has_many :like_items,through::likes,source::item
-- belongs_to :address
 - belongs_to :rate
 
 
@@ -67,9 +67,9 @@ Things you may want to cover:
 |zip_code|integer|null:false|
 
 ### Association
-- has_many :users
 - has_many :items
 - has_many :orders
+- belongs_to :user
 
 
 ## ratesテーブル
