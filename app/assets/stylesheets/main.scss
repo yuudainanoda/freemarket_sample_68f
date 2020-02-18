@@ -6,7 +6,7 @@
 .mainvisual {
   width: 100%;
   height: 560px;
-  background-image: url(/assets/bg-appBanner-pict.jpg);
+  background-image: asset-url("bg-appBanner-pict.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -108,7 +108,7 @@
 .mainvisual2 {
   width: 100%;
   height: 560px;
-  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  background-image: asset-url("bg-topMiddleDl-pict.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
