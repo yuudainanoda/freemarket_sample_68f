@@ -1,5 +1,5 @@
 .appBanner{
-  background-image: asset-url("bg-appBanner-pict.jpg");
+  background-image: asset-ucrl("bg-appBanner-pict.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -31,8 +31,8 @@
       }
       .icon-google{
       margin: 20px;
-      height:80px;
-      width: 200px;
+      height:53px;
+      width: 180px;
       }
     }
   }
