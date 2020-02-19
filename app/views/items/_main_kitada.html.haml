@@ -124,128 +124,133 @@
     .pickupcontainer__productbox__producthead
       = link_to "#" , class: "line" do
         アーカイバ
-    .pickupcontainer__productbox__productlists
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#" , class: "line" do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a007.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product3
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                30000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
-
-        
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#" , class: "line"  do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a004.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product2
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                20000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
-
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#" , class: "line"  do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a001.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product1
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                10000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
-
-
-
-
-
-
-.pickupcontainer
+   
+      .wrapper
+        = render @items 
   .pickupcontainer__head
-    ピックアップブランド
-  .pickupcontainer__productbox
-    .pickupcontainer__productbox__producthead
-      = link_to item path, class: "line"  do
-        新規投稿商品
-    .pickupcontainer__productbox__productlists
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#", class: "line" do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a007.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product3
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                30000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
+    ピックアップカテゴリー
+    .pickupcontainer__productbox
+      .pickupcontainer__productbox__producthead
+        = link_to "#", class: "line"  do
+          新規投稿商品
+
+        .wrapper
+          = render @items 
+    -#  .pickupcontainer__productbox__productlists
+    -#   .pickupcontainer__productbox__productlists__productlist
+    -#     = link_to "#" , class: "line" do    
+          
 
         
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#", class: "line" do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a004.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product2
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                20000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
+-#       .pickupcontainer__productbox__productlists__productlist
+-#         = link_to "#" , class: "line"  do
+-#           .pickupcontainer__productbox__productlists__productlist__img
+-#             -# = image_tag "a004.png"
+            
+-#           .pickupcontainer__productbox__productlists__productlist__body
+-#             .pickupcontainer__productbox__productlists__productlist__body__name
+           
+-#             .pickupcontainer__productbox__productlists__productlist__body__details
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__price
+-#                 20000円
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__star
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+-#                   ★
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+-#                   0
+-#             .pickupcontainer__productbox__productlists__productlist__body__tax
+-#               (税込)
 
-      .pickupcontainer__productbox__productlists__productlist
-        = link_to "#", class: "line" do
-          .pickupcontainer__productbox__productlists__productlist__img
-            -# = image_tag "a001.png"
-          .pickupcontainer__productbox__productlists__productlist__body
-            .pickupcontainer__productbox__productlists__productlist__body__name
-              product1
-            .pickupcontainer__productbox__productlists__productlist__body__details
-              .pickupcontainer__productbox__productlists__productlist__body__details__price
-                10000円
-              .pickupcontainer__productbox__productlists__productlist__body__details__star
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
-                  ★
-                .pickupcontainer__productbox__productlists__productlist__body__details__star__value
-                  0
-            .pickupcontainer__productbox__productlists__productlist__body__tax
-              (税込)
+-#       .pickupcontainer__productbox__productlists__productlist
+-#         = link_to "#" , class: "line"  do
+-#           .pickupcontainer__productbox__productlists__productlist__img
+-#             -# = image_tag "a001.png"
+           
+-#           .pickupcontainer__productbox__productlists__productlist__body
+-#             .pickupcontainer__productbox__productlists__productlist__body__name
+            
+-#               -# - @items.first(1).each do |image| 
+-#               -#   = image.name
+-#             .pickupcontainer__productbox__productlists__productlist__body__details
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__price
+-#                 10000円
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__star
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+-#                   ★
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+-#                   0
+-#             .pickupcontainer__productbox__productlists__productlist__body__tax
+-#               (税込)
+
+
+
+
+
+
+-# .pickupcontainer
+-#   .pickupcontainer__head
+-#     ピックアップブランド
+-#   .pickupcontainer__productbox
+-#     .pickupcontainer__productbox__producthead
+-#       = link_to "#", class: "line"  do
+-#         新規投稿商品
+-#     .pickupcontainer__productbox__productlists
+-#       .pickupcontainer__productbox__productlists__productlist
+-#         = link_to "#", class: "line" do
+-#           .pickupcontainer__productbox__productlists__productlist__img
+-#             -# = image_tag "a007.png"
+           
+-#           .pickupcontainer__productbox__productlists__productlist__body
+-#             .pickupcontainer__productbox__productlists__productlist__body__name
+-#               product3
+-#             .pickupcontainer__productbox__productlists__productlist__body__details
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__price
+-#                 30000円
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__star
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+-#                   ★
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+-#                   0
+-#             .pickupcontainer__productbox__productlists__productlist__body__tax
+-#               (税込)
+
+        
+-#       .pickupcontainer__productbox__productlists__productlist
+-#         = link_to "#", class: "line" do
+-#           .pickupcontainer__productbox__productlists__productlist__img
+-#             -# = image_tag "a004.png"
+            
+-#           .pickupcontainer__productbox__productlists__productlist__body
+-#             .pickupcontainer__productbox__productlists__productlist__body__name
+-#               product2
+-#             .pickupcontainer__productbox__productlists__productlist__body__details
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__price
+-#                 20000円
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__star
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+-#                   ★
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+-#                   0
+-#             .pickupcontainer__productbox__productlists__productlist__body__tax
+-#               (税込)
+
+-#       .pickupcontainer__productbox__productlists__productlist
+-#         = link_to "#", class: "line" do
+-#           .pickupcontainer__productbox__productlists__productlist__img
+-#             -# = image_tag "a001.png"
+           
+-#           .pickupcontainer__productbox__productlists__productlist__body
+-#             .pickupcontainer__productbox__productlists__productlist__body__name
+-#               product1
+-#             .pickupcontainer__productbox__productlists__productlist__body__details
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__price
+-#                 10000円
+-#               .pickupcontainer__productbox__productlists__productlist__body__details__star
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+-#                   ★
+-#                 .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+-#                   0
+-#             .pickupcontainer__productbox__productlists__productlist__body__tax
+-#               (税込)
 
 
