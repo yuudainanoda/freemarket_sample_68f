@@ -1,5 +1,49 @@
 .html
-  .default
-    %h2.default__title
-      商品名
-  
+  .exhibition
+    .exhibition__header
+      =link_to "#" , class: "exhibition__header__logo" do
+        =image_tag "logo.png",class: "exhibition__header__logo__image"
+
+    .exhibition__main
+      .exhibition__main__itemProfile
+        .exhibition__main__itemProfile__top
+          購入内容の確認
+        .exhibition__main__itemProfile__buy
+          .exhibition__main__itemProfile__buy__inner
+            .exhibition__main__itemProfile__buy__inner__photo
+              = image_tag src="sample.png" , class:"sample-img",size:"80x80"
+            .exhibition__main__itemProfile__buy__inner__titleprice
+              %p.exhibition__main__itemProfile__buy__inner__titleprice__title
+                サンプル
+                -# render
+              %p.exhibition__main__itemProfile__buy__inner__titleprice__price
+                -# render
+                -# %span.¥2,500
+                -# %span.税込{"class"=>"aaa"}
+        .exhibition__main__itemProfile__price-confirmation
+          .exhibition__main__itemProfile__price-confirmation__inner
+            .exhibition__main__itemProfile__price-confirmation__inner__payment
+              .exhibition__main__itemProfile__price-confirmation__inner__payment__cell
+                支払い金額
+              .exhibition__main__itemProfile__price-confirmation__inner__payment__include-tax
+                ¥2,500
+            .exhibition__main__itemProfile__price-confirmation__inner__have-point
+              =check_box_tag :use_point
+              =label_tag :use_point, "ポイントを使用（所持ポイント：p０）"
+          %section.cresit-card
+            .cresit-card__box
+              .cresit-card__box__clearfix
+                %h3.osiharai
+                  支払い方法
+                .change
+                  = link_to "#" do
+                    変更する
+              %p.cresit-card__user
+                クレジットカード
+              %br
+                0000000000000000
+              %br
+                有効期限 11/24
+              %figure.card-log              
+
+

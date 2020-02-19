@@ -1,14 +1,127 @@
 html{
-  background: lightgrey;
-  
+  min-height: 100%;
+    background: #f5f5f5;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
 }
-.default{
-  background-color: #fff;
-  width: 700px;
-  height: 30px;
-  margin: 0 auto;
-  padding: 24px 40px 40px;
-  &__title{
-    font-size: 16px;
+
+.exhibition{
+  &__header{
+    margin: 40px 0 0;
+    height: 90px;
+    
+    text-align: center;
+    &__logo{
+      &__image{
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+      }
+    }
+  }
+
+  &__main{
+    &__itemProfile{
+      background-color: #fff;
+      width: 700px;
+      margin: 0 auto;
+      &__top{
+        padding: 32px 16px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__buy{
+        padding: 32px 16px;
+        // display: flex;
+        border: solid #eee 1px;
+        width: 100%;
+        height: 160px;
+        &__inner{
+          max-width: 343px;
+          margin: 0 auto;
+          display: flex;
+          &__photo{
+          .sample-img{
+           width: 80px;
+          }
+          }
+          &__titleprice{
+            margin-left: 16px;
+            &__title{
+              font-size: 14px;
+              margin: 0;
+              padding: 0 0 8px;
+              line-height: 1.5;
+              text-align: left;
+            }
+            &__price{
+              margin: 0;
+              text-align: left;
+              display: flex;
+              &__aaa{
+
+              }
+            }
+          }
+        }
+        
+      }
+      &__price-confirmation{
+        padding: 32px 16px;
+        &__inner{
+          max-width: 343px;
+          margin: 0 auto;
+          // background-color: burlywood;
+          &__payment{
+            justify-content: space-between;
+            display: flex;
+            font-size: 30px;
+            &__cell{
+              font-size: 18px;
+              padding-top: 11px;
+              // text-align: left;
+            }
+            &__include-tax{
+              display: table-cell;
+              // text-align: right;
+            }
+          }
+          &__have-point{
+            margin: 24px 0 32px;
+            display: flex;
+          }
+        }
+        .cresit-card{
+          padding: 32px 0;
+          &__box{
+            max-width: 343px;
+            margin: 0 auto;
+            &__clearfix{
+              display: flex;
+              justify-content: space-between;
+              .osiharai{
+                text-align: left;
+                font-size: 14px;
+              }
+              .change{
+                text-align: right;
+                text-decoration: none;
+                display: block;
+                color: blue;
+              }
+            }
+            .cresit-card__user{
+              line-height: 1.5;
+            }
+            .card-log{
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
   }
 }
