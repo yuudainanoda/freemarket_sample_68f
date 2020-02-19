@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
   resources :items do
-    resources :messages only: [:create, :new]
+    resources :messages, only:[:create, :new]
   end
 end
