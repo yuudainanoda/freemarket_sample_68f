@@ -1,0 +1,41 @@
+.signup
+  .signup__header
+    .header-icon
+      = link_to root_path do
+        = image_tag "logo.png"
+    .signup-header__info
+  .signup__form 
+    %h2 電話番号の確認
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @address
+
+    .field
+      = f.label :携帯電話の番号
+      = f.text_field :tell
+    .sns-message
+      %p
+        本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
+  
+    .actions
+      = f.submit "SNSを送信する"
+    .atention
+      %p
+        電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      %p
+        電話番号の確認が必要な理由>
+  .signup__footer
+    .nav
+      %ul
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            フリマ利用規約
+        %li
+          = link_to "#" do
+            特定商取引に関する表記
+    = link_to root_path do
+      = image_tag "logo-white"
+    %p
+      © Furima, Inc.

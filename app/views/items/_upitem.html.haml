@@ -1,0 +1,151 @@
+.html
+  .exhibition
+    .exhibition__header
+      =link_to "#" , class: "exhibition__header__logo" do
+        =image_tag asset_path("logo.png"),class: "exhibition__header__logo__image"
+
+    .exhibition__main
+      .exhibition__main__itemProfile
+        .exhibition__main__itemProfile__top
+          商品の情報を入力      
+        .exhibition__main__itemProfile__sellForm
+          .exhibition__main__itemProfile__sellForm__upload
+            .exhibition__main__itemProfile__sellForm__upload__head
+              .notation
+                出品画像
+              .formRequire
+                必須
+            .exhibition__main__itemProfile__sellForm__upload__attention
+              最大10枚までアップロードできます
+            %input{type: "file", class: "exhibition__main__itemProfile__sellForm__upload__images10"}
+        .exhibition__main__itemProfile__sellGoods
+          .exhibition__main__itemProfile__sellGoods__name
+            .notation
+              商品名
+            .formRequire
+              必須
+          %input{type: "text", class: "input", placeholder: "商品名（必須40文字まで）"}
+          .exhibition__main__itemProfile__sellGoods__description
+            .notation
+              商品の説明
+            .formRequire
+              必須
+          %input{type: "text", class: "input", placeholder: "商品の説明（必須1,000文字以内）（色、重さ、素材、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
+
+        .exhibition__main__itemProfile__sellDetails
+          .exhibition__main__itemProfile__sellDetails__title
+            商品の詳細
+          .exhibition__main__itemProfile__sellDetails__formBox  
+            .exhibition__main__itemProfile__sellDetails__formBox__category
+              .exhibition__main__itemProfile__sellDetails__formBox__category__select
+                .notation
+                  カテゴリー
+                .formRequire
+                  必須
+              %select{class: "input"}
+                %option{:value => "0"} レディース
+                %option{:value => "1"} メンズ
+            .exhibition__main__itemProfile__sellDetails__formBox__state
+              .exhibition__main__itemProfile__sellDetails__formBox__state__select
+                .notation
+                  商品の状態
+                .formRequire
+                  必須
+              %select{class: "input"}
+                %option{:value => "0"} 未使用
+                %option{:value => "1"} 目立った汚れなし
+
+        .exhibition__main__itemProfile__delivery
+          .exhibition__main__itemProfile__delivery__leftBox
+            .exhibition__main__itemProfile__delivery__leftBox__title
+            配送について
+            =link_to "#", class: "questionMark" do
+              (?)
+          .exhibition__main__itemProfile__delivery__formBox  
+            .exhibition__main__itemProfile__delivery__formBox__burden
+              .exhibition__main__itemProfile__delivery__formBox__burden__select
+                .notation
+                  配送料の負担
+                .formRequire
+                  必須
+              %select{class: "input"}
+                %option{:value => "0"} 送料込み(出品者負担)
+                %option{:value => "1"} 着払い(購入者負担)
+            .exhibition__main__itemProfile__delivery__formBox__area
+              .exhibition__main__itemProfile__delivery__formBox__area__select
+                .notation
+                  配送元の地域
+                .formRequire
+                  必須
+              %select{class: "input"}
+                %option{:value => "0"} 東京
+                %option{:value => "1"} 大阪
+            .exhibition__main__itemProfile__delivery__formBox__days
+              .exhibition__main__itemProfile__delivery__formBox__days__select
+                .notation
+                  配送までの日数
+                .formRequire
+                  必須
+              %select{class: "input"}
+                %option{:value => "0"} ---
+                %option{:value => "1"} 1〜2日で発送
+
+        .exhibition__main__itemProfile__sellPrice
+          .exhibition__main__itemProfile__sellPrice__leftBox
+            .exhibition__main__itemProfile__sellPrice__leftBox__title
+            販売価格(300〜9,999,999)
+            =link_to "#", class: "questionMark" do
+              (?)
+          .exhibition__main__itemProfile__sellPrice__calculation
+            .exhibition__main__itemProfile__sellPrice__calculation__priceForm
+              .exhibition__main__itemProfile__sellPrice__calculation__priceForm__amountOfSales
+                .notation
+                  価格
+                .formRequire
+                  必須
+              %input{class: "input"}
+            .exhibition__main__itemProfile__sellPrice__calculation__commission
+              販売手数料(10%)
+            .exhibition__main__itemProfile__sellPrice__calculation__profit
+              販売利益
+
+        .warning
+          .warning_links
+            %span.warning__links__link
+            =link_to "#" do
+              禁止されている出品
+            、
+            %span.warning__links__link
+            =link_to "#" do
+              行為
+            を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %span.warning__links__link
+            =link_to "#" do
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして
+            %span.warning__links__link
+            =link_to "#" do
+              加盟店規約
+            に同意したことになります。
+          %submit{class: "submit1"}
+            出品する
+          %submit{class: "submit2"}
+            もどる
+
+
+    .exhibition__footer
+      .exhibition__footer__lists
+        =link_to "#", class: "exhibition__footer__lists__list" do
+          プライバシーポリシー
+        =link_to "#", class: "exhibition__footer__lists__list" do
+          メルカリ利用規約
+        =link_to "#", class: "exhibition__footer__lists__list" do
+          特定商取引に関する表記   
+      =link_to "#" , class: ".exhibition__footer__logo" do
+        =image_tag asset_path("logo.png"),class: "exhibition__footer__logo__image"
+      .exhibition__footer__ending
+        © Mercari, Inc.
