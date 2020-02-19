@@ -1,7 +1,9 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import "./reset";
+@import "./color";
 @import "new";
 @import "./main";
 @import "./footer";
 @import "./header";
 @import "./signup";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
