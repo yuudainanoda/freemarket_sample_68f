@@ -1,7 +1,7 @@
 
 .pickupcontainer__productbox__productlists
   .pickupcontainer__productbox__productlists__productlist
-    = link_to "#" , class: "line" do
+    = link_to item_path(item.id) ,mathod: :get, class: "line" do
       -if item.order_id.present? 
         .pickupcontainer__productbox__productlists__productlist__sold
           .pickupcontainer__productbox__productlists__productlist__sold__inner
