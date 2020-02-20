@@ -44,6 +44,22 @@
                 0000000000000000
               %br
                 有効期限 11/24
-              %figure.card-log              
-
-
+              %figure.card-log
+              %image{alt: "jcb", height: "15",width: "49" ,src:"jcb-logomark-img-01.png"} 
+          %section.buyer-info
+            .buyer-info__box
+              .buyer-info__box__clearfix
+                %h3.left
+                  配送先
+                .right
+                = link_to "#" do
+                  変更する
+              .buyer-info__address
+                %p 〒000-0000
+                %br
+                大阪府大阪市難波スカイオ
+                %br
+                オオハシケンジ
+          %section.buy-content
+            %p.buy-content__message
+            %button{:onclick => "#", :type => "“button”",:class=>"red-btn"}購入する

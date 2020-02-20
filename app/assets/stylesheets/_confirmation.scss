@@ -99,6 +99,8 @@ html{
           &__box{
             max-width: 343px;
             margin: 0 auto;
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
             &__clearfix{
               display: flex;
               justify-content: space-between;
@@ -117,8 +119,57 @@ html{
               line-height: 1.5;
             }
             .card-log{
-              margin-top: 15px;
+              margin-top: 8px;
+              // background-image: image-url(jcb-logomark-img-01.png);
             }
+          }
+        }
+        .buyer-info{
+          padding: 32px 0;
+          &__box{
+            max-width: 343px;
+            margin: 0 auto;
+            &__clearfix{
+              display: flex;
+              justify-content: space-between;
+              .left{
+                margin: 0;
+                font-size: 14px;
+                text-align: left;
+                font: bold;
+              }
+              &__right{
+                text-align: right;
+                text-decoration: none;
+                display: block;
+                color: blue;
+              }
+            }
+          }
+          &__address{
+            text-align: left;
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+        }
+        .buycontent{
+          padding: 24px 0 0;
+          &__message{
+            padding-bottom: 24px;
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
+          }
+          .red-btn{
+            border: 1px solid #888;
+            background: red($color: #000000);
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            text-align: center;
           }
         }
       }
