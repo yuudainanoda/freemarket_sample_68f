@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   # has_many :flag_users,through::flags,source::user
   has_many :images
   accepts_nested_attributes_for :images
-  # belongs_to :order
+  has_one :order
   # belongs_to :profit
   # belongs_to :prefecture
   # belongs_to :user

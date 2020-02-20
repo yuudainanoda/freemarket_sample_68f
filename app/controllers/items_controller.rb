@@ -2,22 +2,13 @@ class ItemsController < ApplicationController
 
 
   def index
+    @items = Item.all.limit(3)
 
-
-    # @items = Item.includes(:images)
-    @items = Item.all
-   
-    
-    
   end
 
   def new
-
     @item = Item.new
     
-
-    
-
   end
 
 
@@ -30,5 +21,9 @@ class ItemsController < ApplicationController
   #   @messages = @item.messages.includes(:id)
 
   # end
+
+
+
+  
 
 end

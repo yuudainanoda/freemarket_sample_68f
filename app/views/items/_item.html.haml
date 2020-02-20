@@ -1,11 +1,11 @@
--# .pickupcontainer__productbox__productlists__productlist__img
-  -# = image_tag "a007.png"
-  -# - @images.each do |image| 
-  -#   = image.content
+
 .pickupcontainer__productbox__productlists
   .pickupcontainer__productbox__productlists__productlist
     = link_to "#" , class: "line" do
-       
+      -if item.order_id.present? 
+        .pickupcontainer__productbox__productlists__productlist__sold
+          .pickupcontainer__productbox__productlists__productlist__sold__inner
+            SOLD
         
 
       .pickupcontainer__productbox__productlists__productlist__img
