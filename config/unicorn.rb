@@ -30,6 +30,12 @@ before_fork do |server, worker|
     run_once = false # prevent from firing again
   end
 
+# before_fork do |server, worker|
+#   root = "/var/www/freemarket_sample_68f/current"
+#   before_exec do |server|
+#     ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
+#   end
+
   old_pid = "#{server.config[:pid]}.oldbin"
   if File.exist?(old_pid) && server.pid != old_pid
     begin

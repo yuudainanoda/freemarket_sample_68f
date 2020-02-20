@@ -31,6 +31,13 @@
                   =check_box_tag :check
                   =label_tag :check, type="パスワードを表示する", class: "pass"
           .field
+            = f.label :確認用パスワード
+            %span.require 必須
+            %br/
+            .field-input
+              = f.password_field :password_confirmation, autocomplete: "off", class: "input-area"
+           
+          .field
             %h3
               本人確認
             %p.ident
@@ -44,13 +51,13 @@
               %br/
               = f.text_field :last_name, class: "input-half", placeholder: "例）太郎"
           .field
-            = f.label :お名前（全角） 
+            = f.label :お名前フリガナ（全角） 
             %span.require 必須
             %br/
             .name
-              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）山田"
+              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）ヤマダ"
               %br/
-              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）太郎"
+              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）タロウ"
           .field
             = f.label :生年月日
             %span.require 必須
@@ -69,9 +76,63 @@
                 日
           %p.ident
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          %h2 発送元・お届け先住所
+          .field
+            = f.label :お名前（全角）
+            %span.require 必須
+            %br/
+            .name
+              = f.text_field :first_name, class: "input-half left", placeholder: "例）山田"
+              %br/
+              = f.text_field :last_name, class: "input-half", placeholder: "例）太郎"
+          .field
+            = f.label :お名前フリガナ（全角） 
+            %span.require 必須
+            %br/
+            .name
+              = f.text_field :first_name_kana, class: "input-half left", placeholder: "例）ヤマダ"
+              %br/
+              = f.text_field :last_name_kana, class: "input-half", placeholder: "例）タロウ"
+          .field
+            = f.label :郵便番号
+            %span.require 必須
+            %br/
+            -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
+            = f.text_field :nickname, class: "input-area", placeholder: "例）123-4567"
+          .field
+            = f.label :都道府県
+            %span.require 必須
+            %br/
+            -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
+            -# 第２引数：サーバーサイド設定後変更項目
+            .prefecture-select
+              = f.select :birth_year, [*("北海道")], prompt:"--", class: "input-area"
+          .field
+            = f.label :市区町村
+            %span.require 必須
+            %br/
+            -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
+            = f.text_field :nickname, class: "input-area", placeholder: "例）大阪市中央区"
+          .field
+            = f.label :番地
+            %span.require 必須
+            %br/
+            -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
+            = f.text_field :nickname, class: "input-area", placeholder: "例）難波5-1-60"
+          .field
+            = f.label :建物名
+            %span.any 任意
+            %br/
+            -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
+            = f.text_field :nickname, class: "input-area", placeholder: "例）なんばスカイオ １５階"
+          .field
+            = f.label :電話
+            %span.any 任意
+            %br/
+            = f.text_field :nickname, class: "input-area", placeholder: "例）050-3187-3522"
         .content
           %div.info
-            「次へ進む」のボタンを押すことにより、
+            「登録」のボタンを押すことにより、
             %span.bule
             = link_to "#" do
               利用規約
