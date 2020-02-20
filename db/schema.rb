@@ -18,17 +18,33 @@ ActiveRecord::Schema.define(version: 2020_02_18_110407) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "prefecture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "street_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name", null: false
+    t.string "last_name_kana", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "building"
     t.integer "zipcode", null: false
+    t.integer "telephone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "telephones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "telephone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

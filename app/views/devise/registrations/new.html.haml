@@ -98,7 +98,7 @@
             %span.require 必須
             %br/
             -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
-            = f.text_field :nickname, class: "input-area", placeholder: "例）123-4567"
+            = f.text_field :zipcode, class: "input-area", placeholder: "例）123-4567"
           .field
             = f.label :都道府県
             %span.require 必須
@@ -106,30 +106,30 @@
             -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
             -# 第２引数：サーバーサイド設定後変更項目
             .prefecture-select
-              = f.select :birth_year, [*("北海道")], prompt:"--", class: "input-area"
+              = f.select :prefecture, [*("北海道")], prompt:"--", class: "input-area"
           .field
             = f.label :市区町村
             %span.require 必須
             %br/
             -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
-            = f.text_field :nickname, class: "input-area", placeholder: "例）大阪市中央区"
+            = f.text_field :city, class: "input-area", placeholder: "例）大阪市中央区"
           .field
             = f.label :番地
             %span.require 必須
             %br/
             -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
-            = f.text_field :nickname, class: "input-area", placeholder: "例）難波5-1-60"
+            = f.text_field :address, class: "input-area", placeholder: "例）難波5-1-60"
           .field
             = f.label :建物名
             %span.any 任意
             %br/
             -# 第一引数：ユーザーとアドレステーブルのサーバーサイドを設定後変更項目
-            = f.text_field :nickname, class: "input-area", placeholder: "例）なんばスカイオ １５階"
+            = f.text_field :building, class: "input-area", placeholder: "例）なんばスカイオ １５階"
           .field
             = f.label :電話
             %span.any 任意
             %br/
-            = f.text_field :nickname, class: "input-area", placeholder: "例）050-3187-3522"
+            = f.text_field :telephone, class: "input-area", placeholder: "例）050-3187-3522"
         .content
           %div.info
             「登録」のボタンを押すことにより、
