@@ -10,15 +10,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def new 
     @user = User.new
-    @user.street_addresses.build
+    # @street_address = StreetAddress.new
+    @user.build_street_address
   end
 
   def create
-    @user = User.new(sing_up_params)
+    @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
+    @user.save
     # session ["devise.regist_data"] = {user:@user.attributes}
     # session ["devise.regist_data"] [:user]["password"]= params[:user][:password]
     # @telephone = @user.build_telephone
@@ -99,15 +101,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :last_name_kana,
       :birth_year,
       :birth_month,
-      :birth_day
-      street_addresses_attributes: [:id, :zipcode, :city, :address,:_destroy]
+      :birth_day,
+      street_address_attributes: [:id, :zipcode, :city, :address,:prefecture,:first_name,:first_name_kana,:last_name,:last_name_kana,:telephone,:_destroy]
     )
   end
 
-  protected
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  end
+  # protected
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up,  keys: [:attribute])
+  # end
   #  protected
   #  def telephone_params
   #  params.require(:telephone).permit(:telephone)

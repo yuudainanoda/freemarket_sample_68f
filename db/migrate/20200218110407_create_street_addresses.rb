@@ -11,6 +11,8 @@ class CreateStreetAddresses < ActiveRecord::Migration[5.2]
       t.string       :building
       t.integer      :zipcode,     null:false
       t.integer      :telephone
+      t.references :user, foreign_key: true
+      # add_index :stree_address ,:user_id
       t.timestamps
     end
   end

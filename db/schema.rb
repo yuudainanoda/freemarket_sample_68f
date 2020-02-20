@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 2020_02_18_110407) do
     t.string "building"
     t.integer "zipcode", null: false
     t.integer "telephone"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_street_addresses_on_user_id"
   end
 
   create_table "telephones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,4 +71,5 @@ ActiveRecord::Schema.define(version: 2020_02_18_110407) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "street_addresses", "users"
 end
