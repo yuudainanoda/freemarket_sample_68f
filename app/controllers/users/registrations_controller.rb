@@ -10,7 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def new 
     @user = User.new
-    # @street_address = StreetAddress.new
     @user.build_street_address
   end
 
@@ -114,5 +113,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #  def telephone_params
   #  params.require(:telephone).permit(:telephone)
   #  end
-
+  # 必要だと思っていた記述ですが、現時点（ユーザー新規登録機能完成時点）で不要なためコメントアウト、全ての機能が完成して問題なければ削除の予定
 end
