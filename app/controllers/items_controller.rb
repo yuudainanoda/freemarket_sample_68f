@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @message = Message.new
-    # @messages = @item.messages.includes(:user)
   end
 
 end

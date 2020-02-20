@@ -1,16 +1,10 @@
 class MessagesController < ApplicationController
   def new
    
-   
   end
 
   def create
     @message = Messages.create(message_params)
-    # if @message.save   
-    #   @msg = "いいよ"
-    # else
-    #   @msg = "ダメ"
-    # end
   end
 
   def message_params
