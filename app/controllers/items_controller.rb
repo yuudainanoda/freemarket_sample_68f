@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
-  def show
-    @item = Item.find(params[:id])
-    # @comment = Comment.find(params[:id])
-    @message = Message.new
-    @messages = @item.messages.includes(:id)
 
+  def index
+    @items = Item.all.limit(3)
+
+  end
+
+  def new
+    @item = Item.new
+    
   end
 
 end

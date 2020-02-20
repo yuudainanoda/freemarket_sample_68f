@@ -1,0 +1,29 @@
+
+.pickupcontainer__productbox__productlists
+  .pickupcontainer__productbox__productlists__productlist
+    = link_to "#" , class: "line" do
+      -if item.order_id.present? 
+        .pickupcontainer__productbox__productlists__productlist__sold
+          .pickupcontainer__productbox__productlists__productlist__sold__inner
+            SOLD
+        
+
+      .pickupcontainer__productbox__productlists__productlist__img
+        = image_tag "a007.png"
+      .pickupcontainer__productbox__productlists__productlist__body
+        .pickupcontainer__productbox__productlists__productlist__body__name
+          
+          = item.name
+          
+        .pickupcontainer__productbox__productlists__productlist__body__details
+          .pickupcontainer__productbox__productlists__productlist__body__details__price
+            = item.price 
+            円
+          .pickupcontainer__productbox__productlists__productlist__body__details__star
+            .pickupcontainer__productbox__productlists__productlist__body__details__star__icon
+              ★
+            .pickupcontainer__productbox__productlists__productlist__body__details__star__value
+              0
+        .pickupcontainer__productbox__productlists__productlist__body__tax
+          (税込)
+      

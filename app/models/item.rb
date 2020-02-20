@@ -6,7 +6,9 @@ class Item < ApplicationRecord
   # has_many :message_users,through::messages,source::user
   # has_many :like_users,through::likes,source::user
   # has_many :flag_users,through::flags,source::user
-  # belongs_to :order
+  has_many :images
+  accepts_nested_attributes_for :images
+  has_one :order
   # belongs_to :profit
   # belongs_to :prefecture
   # belongs_to :user
