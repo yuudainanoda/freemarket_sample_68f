@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many   :items
-  has_one   :street_address
-  # has_one :street_address 
+  # has_many   :street_addresses
+  has_one :street_address 
   accepts_nested_attributes_for :street_address,allow_destroy: true
   # has_many   :orders
   # has_many   :profits

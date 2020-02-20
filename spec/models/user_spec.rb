@@ -62,42 +62,39 @@ describe User do
         user.valid?
         expect(user.errors[:last_name_kana]).to include("can't be blank")
       end
-   
+      # 10. birth_yearが空では登録できないこと
       it "is invalid without a birth_year" do
         user = build(:user, birth_year: nil)
         user.valid?
         expect(user.errors[:birth_year]).to include("can't be blank")
       end
-
+      # 11. birth_monthが空では登録できないこと
       it "is invalid without a birth_month" do
         user = build(:user, birth_month: nil)
         user.valid?
         expect(user.errors[:birth_month]).to include("can't be blank")
       end
-
+       # 12. birth_dayが空では登録できないこと
       it "is invalid without a birth_day" do
         user = build(:user, birth_day: nil)
         user.valid?
         expect(user.errors[:birth_day]).to include("can't be blank")
       end
 
-    
+      # 13. 重複したemailが存在する場合登録できないこと
+      it "is invalid with a duplicate email address" do
+        user = create(:user, email: "test@gmail.com")
+        another_user = build(:user, email: "test@gmail.com")
+        another_user.valid?
+        expect(another_user.errors[:email]).to include("has already been taken")
+      end
 
-    # 8. 重複したemailが存在する場合登録できないこと
-    it "is invalid with a duplicate email address" do
-      user = create(:user, email: "test@gmail.com")
-      another_user = build(:user, email: "test@gmail.com")
-      another_user.valid?
-      expect(another_user.errors[:email]).to include("has already been taken")
-    end
-
-    # 9. passwordが6文字以上であれば登録できること
-    it "is valid with a password that has more than 7 characters " do
-      user = build(:user, password: "0000000", password_confirmation: "0000000")
-      user.valid?
-      expect(user).to be_valid
-    end
-
-    
+      # 14. passwordが7文字以上であれば登録できること
+      it "is valid with a password that has more than 7 characters " do
+        user = build(:user, password: "0000000", password_confirmation: "0000000")
+        user.valid?
+        expect(user).to be_valid
+      end
+      
   end
 end
