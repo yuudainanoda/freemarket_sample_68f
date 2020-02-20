@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # has_many   :orders
   # has_many   :profits
   # has_many   :points
-  # has_many   :messages
+  has_many   :messages
   # has_many   :likes
   # has_many   :flags
   # has_many   :message_items,through::messages,source::item

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   # has_many :item_images
-  # has_many :messages
+  has_many :messages
   # has_many :likes
   # has_many :flags
   # has_many :message_users,through::messages,source::user
