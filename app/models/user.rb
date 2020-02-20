@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # has_many   :orders
   # has_many   :profits
   # has_many   :points
-  # has_many   :messages
+  has_many   :messages
   # has_many   :likes
   # has_many   :message_items,through::messages,source::item
   # has_many   :like_items,through::likes,source::item
@@ -28,5 +28,6 @@ class User < ApplicationRecord
   format: { with: /\A([ァ-ン]|ー)+\Z/}
   validates :first_name,:last_name, presence: true,
   format: { with:/\A[ぁ-んァ-ン一-龥]/}
+  has_many :orders
 
 end
