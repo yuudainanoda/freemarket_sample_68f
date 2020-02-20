@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_102659) do
     t.integer "price"
     t.text "image"
     t.integer "order_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
