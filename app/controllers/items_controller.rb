@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
 
-
   def index
     @items = Item.all.limit(3)
 
@@ -10,20 +9,5 @@ class ItemsController < ApplicationController
     @item = Item.new
     
   end
-
-
-
-
-  # def show
-  #   @item = Item.find(params[:id])
-  #   # @comment = Comment.find(params[:id])
-  #   @message = Message.new
-  #   @messages = @item.messages.includes(:id)
-
-  # end
-
-
-
-  
 
 end
