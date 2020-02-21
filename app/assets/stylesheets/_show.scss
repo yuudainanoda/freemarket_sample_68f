@@ -3,7 +3,7 @@
 }
 
 
-.line {
+.line2 {
   display: flex;
   padding: 0 60px;
   border-top: 1px solid #eee;
@@ -138,11 +138,53 @@
         }
       }
     }
+    &__comment {
+      background-color: white;
+      width: 620px;
+      height: 300px;
+      margin: 10px 0;
+      text-align: center;
+
+      &__btn {
+        
+        
+        &__send {
+        line-height: 48px;
+        background-color: #3ccace;
+        border: 1px solid #3ccace;
+        color: #fff;
+        width: 60%;
+        font-size: 18px;
+        border-radius: 100%;
+
+        }
+      }
+
+      &__box {
+        height: 100px;
+        width: 500px;
+        padding: 24px;
+        margin: 30px;
+        border: solid 1px;
+
+        &__text {
+          background-color: #f8f8f8;
+          font-size: 14px;
+          margin: 10px ;
+          padding: 8px;
+        
+        }
+        
+      }
+      
+    }
   }
+  
 
   &__links {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
     &__back {
       color: #3ccace;
       text-decoration: none;
@@ -152,7 +194,7 @@
    &__edit {
      color: #3ccace;
      font-size: 24px;
-     margin: 24px 0 8px;
+     margin: 44px 0 8px;
      font-weight: bold;
      text-decoration: none;
    }
