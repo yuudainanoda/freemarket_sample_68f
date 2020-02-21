@@ -19,15 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
-    if @user.save
-      session[:id] = @user.id
-      sign_in User.find(session[:id]) unless user_signed_in?
-      #後にcurrent_user.idが必要なので、signinさせてしまう
-    else
-      render 'main'
-    end
-    # @user.save
-    # redirect_to root_path
+    @user.save
+    redirect_to root_path
     # session ["devise.regist_data"] = {user:@user.attributes}
     # session ["devise.regist_data"] [:user]["password"]= params[:user][:password]
     # @telephone = @user.build_telephone
@@ -98,7 +91,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   private
-  def user_params
+  def sign_up_params
     params.require(:user).permit(
       :nickname,
       :email,
