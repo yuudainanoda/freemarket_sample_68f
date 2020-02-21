@@ -15,12 +15,10 @@
             .confirmation__main__itemProfile__buy__inner__titleprice
               %p.confirmation__main__itemProfile__buy__inner__titleprice__title
                 サンプル
-                -# render
               %p.confirmation__main__itemProfile__buy__inner__titleprice__price
-                -# render
                 %span#id_value.class_zeikomi
                   ¥2,500
-                %span{"class"=>"aaa"}
+                %span{class:"tax"}
                   (税込) 送料込み
         .confirmation__main__itemProfile__price-confirmation
           .confirmation__main__itemProfile__price-confirmation__inner
@@ -64,7 +62,7 @@
                 オオハシケンジ
           %section.buy-content
             %p.buy-content__message
-            %button{:onclick => "#", :type => "“button”",:class=>"red-btn"}購入する
+            %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
             %p.app
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
             .app-introduce
@@ -85,7 +83,7 @@
             = link_to "#",class:"torihiki" do
               特定商取引に関する表記
       .confirmation__footer__logo
-        = link_to "/" do    
+        = link_to "root_path" do    
           = image_tag "logo.png", size: "145x55", class: "abtn"
         %p.license
         © Furima, Inc.

@@ -61,6 +61,9 @@ html{
               text-align: left;
               display: flex;
               font-weight: 600;
+              .tax{
+                font-weight: 600;
+              }
             }
           }
         }
@@ -224,6 +227,7 @@ html{
       display: block;
       color: #333;
       width: 160px;
+      margin: 25px auto;
     }
     .license{
       font-size: 13px;
