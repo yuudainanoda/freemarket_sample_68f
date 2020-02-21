@@ -5,18 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many   :items
+  has_one :street_address 
+  accepts_nested_attributes_for :street_address,allow_destroy: true
   # has_many   :orders
   # has_many   :profits
   # has_many   :points
-  # has_many   :messages
+  has_many   :messages
   # has_many   :likes
-  # has_many   :flags
   # has_many   :message_items,through::messages,source::item
   # has_many   :like_items,through::likes,source::item
   # has_many   :flag_items,through::flags,source::item
-  # belongs_to :prefecture
   # belongs_to :rate
-  # belongs_to :telephone
   validates  :nickname,:birth_year,:birth_month,:birth_day,presence: true
    # メールの正規表現
   # validates :email, presence: true, length: { maximum: 255 },uniqueness: true
@@ -28,5 +27,6 @@ class User < ApplicationRecord
   format: { with: /\A([ァ-ン]|ー)+\Z/}
   validates :first_name,:last_name, presence: true,
   format: { with:/\A[ぁ-んァ-ン一-龥]/}
+  has_many :orders
 
 end

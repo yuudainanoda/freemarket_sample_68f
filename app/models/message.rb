@@ -1,3 +1,5 @@
 class Message < ApplicationRecord
-  t.string :text
+  belongs_to :item
+  belongs_to :user
+  
 end
