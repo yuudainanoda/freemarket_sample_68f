@@ -153,8 +153,10 @@ html{
             line-height: 1.4;
           }
         }
-        .buycontent{
+        .buy-content{
           padding: 24px 0 0;
+          max-width: 343px;
+          margin: 0 auto;
           &__message{
             padding-bottom: 24px;
             border-top: solid 1px #eee;
@@ -162,7 +164,7 @@ html{
           }
           .red-btn{
             border: 1px solid #888;
-            background: red($color: #000000);
+            background: red;
             color: #fff;
             display: block;
             width: 100%;
@@ -171,8 +173,22 @@ html{
             transition: all ease-out .3s;
             text-align: center;
           }
+          .app{
+            margin-top: 40px;
+            line-height: 1.5;
+          }
+          .app-introduce{
+            display: flex;
+            margin: 20px auto;
+            justify-content: space-around;
+          }
         }
       }
     }
+  }
+  &__footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
   }
 }

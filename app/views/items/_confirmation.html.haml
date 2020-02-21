@@ -63,3 +63,22 @@
           %section.buy-content
             %p.buy-content__message
             %button{:onclick => "#", :type => "“button”",:class=>"red-btn"}購入する
+            %p.app
+            アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+            .app-introduce
+              = link_to "" do    
+                = image_tag src="/assets/duellinks03.png", size: "140x43", class: "abtn"
+              = link_to "" do
+                = image_tag src="/assets/Google-Play-Badge.png", size: "140x43", class: "gbtn"
+    .exhibition__footer
+      .exhibition__footer_message
+        %ul
+          %li 
+            = link_to "#" do
+              プライバシーポリシー
+          %li 
+            = link_to "#" do
+              メルカリ利用規約
+          %li  
+            = link_to "#" do
+              特定商取引に関する表記
