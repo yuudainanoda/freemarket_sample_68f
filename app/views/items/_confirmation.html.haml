@@ -18,8 +18,10 @@
                 -# render
               %p.exhibition__main__itemProfile__buy__inner__titleprice__price
                 -# render
-                -# %span.¥2,500
-                -# %span.税込{"class"=>"aaa"}
+                %span#id_value.class_zeikomi
+                  ¥2,500
+                %span{"class"=>"aaa"}
+                  (税込) 送料込み
         .exhibition__main__itemProfile__price-confirmation
           .exhibition__main__itemProfile__price-confirmation__inner
             .exhibition__main__itemProfile__price-confirmation__inner__payment
@@ -36,7 +38,7 @@
                 %h3.osiharai
                   支払い方法
                 .change
-                  = link_to "#" do
+                  = link_to "#" ,class:"change-p" do 
                     変更する
               %p.cresit-card__user
                 クレジットカード
@@ -52,8 +54,8 @@
                 %h3.left
                   配送先
                 .right
-                = link_to "#" do
-                  変更する
+                  = link_to "#" ,class:"change-h" do
+                    変更する
               .buyer-info__address
                 %p 〒000-0000
                 %br
@@ -71,14 +73,19 @@
               = link_to "" do
                 = image_tag src="/assets/Google-Play-Badge.png", size: "140x43", class: "gbtn"
     .exhibition__footer
-      .exhibition__footer_message
+      .exhibition__footer__message
         %ul
           %li 
-            = link_to "#" do
+            = link_to "#",class:"privacy" do
               プライバシーポリシー
           %li 
-            = link_to "#" do
+            = link_to "#",class:"kiyaku" do
               メルカリ利用規約
           %li  
-            = link_to "#" do
+            = link_to "#",class:"torihiki" do
               特定商取引に関する表記
+      .exhibition__footer__logo
+        = link_to "/" do    
+          = image_tag "logo.png", size: "145x55", class: "abtn"
+        %p.license
+        © Furima, Inc.

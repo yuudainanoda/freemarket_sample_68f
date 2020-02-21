@@ -61,6 +61,10 @@ html{
               margin: 0;
               text-align: left;
               display: flex;
+              font-weight: 600;
+              .zeikomi{
+
+              }
               &__aaa{
 
               }
@@ -82,11 +86,9 @@ html{
             &__cell{
               font-size: 18px;
               padding-top: 11px;
-              // text-align: left;
             }
             &__include-tax{
               display: table-cell;
-              // text-align: right;
             }
           }
           &__have-point{
@@ -95,12 +97,12 @@ html{
           }
         }
         .cresit-card{
-          padding: 32px 0;
+          padding: 20px 0;
           &__box{
             max-width: 343px;
             margin: 0 auto;
             border-top: solid 1px #eee;
-            border-bottom: solid 1px #eee;
+            padding: 32px 0px;
             &__clearfix{
               display: flex;
               justify-content: space-between;
@@ -113,6 +115,10 @@ html{
                 text-decoration: none;
                 display: block;
                 color: blue;
+                .change-p{
+                  color: blue;
+                  text-decoration: none;
+                }
               }
             }
             .cresit-card__user{
@@ -120,12 +126,15 @@ html{
             }
             .card-log{
               margin-top: 8px;
-              // background-image: image-url(jcb-logomark-img-01.png);
             }
           }
         }
         .buyer-info{
           padding: 32px 0;
+          // border-bottom: solid 1px #eee;
+           border-top: solid 1px #eee;
+           max-width: 343px;
+           margin: 0 auto;
           &__box{
             max-width: 343px;
             margin: 0 auto;
@@ -138,11 +147,15 @@ html{
                 text-align: left;
                 font: bold;
               }
-              &__right{
+              .right{
                 text-align: right;
                 text-decoration: none;
                 display: block;
                 color: blue;
+                .change-h{
+                  color: blue;
+                  text-decoration: none;
+                }
               }
             }
           }
@@ -157,9 +170,9 @@ html{
           padding: 24px 0 0;
           max-width: 343px;
           margin: 0 auto;
+          border-top: solid 1px #eee;
           &__message{
             padding-bottom: 24px;
-            border-top: solid 1px #eee;
             border-bottom: solid 1px #eee;
           }
           .red-btn{
@@ -190,5 +203,40 @@ html{
     width: 456px;
     height: 220px;
     margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    // position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    &__message{
+      
+      ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        .privacy{ 
+          color: black;
+          text-decoration: none;
+        }
+        .kiyaku{
+          color: black;
+          text-decoration: none;
+        }
+        .torihiki{
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+    &__logo{
+      display: block;
+      color: #333;
+      width: 160px;
+    }
+    .license{
+      font-size: 13px;
+    }
   }
 }
