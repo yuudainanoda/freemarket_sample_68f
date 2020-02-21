@@ -1,35 +1,35 @@
 .html
-  .exhibition
-    .exhibition__header
-      =link_to "#" , class: "exhibition__header__logo" do
-        =image_tag "logo.png",class: "exhibition__header__logo__image"
+  .confirmation
+    .confirmation__header
+      =link_to "#" , class: "confirmation__header__logo" do
+        =image_tag "logo.png",class: "confirmation__header__logo__image"
 
-    .exhibition__main
-      .exhibition__main__itemProfile
-        .exhibition__main__itemProfile__top
+    .confirmation__main
+      .confirmation__main__itemProfile
+        .confirmation__main__itemProfile__top
           購入内容の確認
-        .exhibition__main__itemProfile__buy
-          .exhibition__main__itemProfile__buy__inner
-            .exhibition__main__itemProfile__buy__inner__photo
+        .confirmation__main__itemProfile__buy
+          .confirmation__main__itemProfile__buy__inner
+            .confirmation__main__itemProfile__buy__inner__photo
               = image_tag src="sample.png" , class:"sample-img",size:"80x80"
-            .exhibition__main__itemProfile__buy__inner__titleprice
-              %p.exhibition__main__itemProfile__buy__inner__titleprice__title
+            .confirmation__main__itemProfile__buy__inner__titleprice
+              %p.confirmation__main__itemProfile__buy__inner__titleprice__title
                 サンプル
                 -# render
-              %p.exhibition__main__itemProfile__buy__inner__titleprice__price
+              %p.confirmation__main__itemProfile__buy__inner__titleprice__price
                 -# render
                 %span#id_value.class_zeikomi
                   ¥2,500
                 %span{"class"=>"aaa"}
                   (税込) 送料込み
-        .exhibition__main__itemProfile__price-confirmation
-          .exhibition__main__itemProfile__price-confirmation__inner
-            .exhibition__main__itemProfile__price-confirmation__inner__payment
-              .exhibition__main__itemProfile__price-confirmation__inner__payment__cell
+        .confirmation__main__itemProfile__price-confirmation
+          .confirmation__main__itemProfile__price-confirmation__inner
+            .confirmation__main__itemProfile__price-confirmation__inner__payment
+              .confirmation__main__itemProfile__price-confirmation__inner__payment__cell
                 支払い金額
-              .exhibition__main__itemProfile__price-confirmation__inner__payment__include-tax
+              .confirmation__main__itemProfile__price-confirmation__inner__payment__include-tax
                 ¥2,500
-            .exhibition__main__itemProfile__price-confirmation__inner__have-point
+            .confirmation__main__itemProfile__price-confirmation__inner__have-point
               =check_box_tag :use_point
               =label_tag :use_point, "ポイントを使用（所持ポイント：p０）"
           %section.cresit-card
@@ -72,8 +72,8 @@
                 = image_tag src="/assets/duellinks03.png", size: "140x43", class: "abtn"
               = link_to "" do
                 = image_tag src="/assets/Google-Play-Badge.png", size: "140x43", class: "gbtn"
-    .exhibition__footer
-      .exhibition__footer__message
+    .confirmation__footer
+      .confirmation__footer__message
         %ul
           %li 
             = link_to "#",class:"privacy" do
@@ -84,7 +84,7 @@
           %li  
             = link_to "#",class:"torihiki" do
               特定商取引に関する表記
-      .exhibition__footer__logo
+      .confirmation__footer__logo
         = link_to "/" do    
           = image_tag "logo.png", size: "145x55", class: "abtn"
         %p.license
