@@ -95,6 +95,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(
       :nickname,
       :email,
+      :password,
+      :password_confirmation,
       :first_name,
       :first_name_kana,
       :last_name,
