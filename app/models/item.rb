@@ -18,17 +18,13 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validate :name, presence: true
-  validate :price, presence: true
-  validate :description, presence: true
-  validate :category, presence: true
-  validate :condition, presence: true
-  validate :deriver_charge, presence: true
-  validate :area, presence: true
-  validate :deriver_date, presence: true
-
-  # #出品時の選択肢項目のデータを記録する「active_hash」を使用するために必要
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :conditon
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+  validates :category, presence: true
+  validates :condition, presence: true
+  validates :deriver_charge, presence: true
+  validates :area, presence: true
+  validates :deriver_date, presence: true
 
 end

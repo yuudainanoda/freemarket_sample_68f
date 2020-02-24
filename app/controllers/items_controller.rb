@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @image = @item.images.build
-    # @comment = Comment.find(params[:id])
     @message = Message.new
     @messages = @item.messages.includes(:id)
 
