@@ -1,0 +1,174 @@
+.html
+  .exhibit
+    .exhibit__header
+      =link_to root_path , class: "exhibit__header__logo" do
+        =image_tag asset_path("logo.png"),class: "exhibit__header__logo__image"
+
+    .exhibit__main
+      .exhibit__main__itemProfile
+        .exhibit__main__itemProfile__inputForm
+        = form_with(model: @item, local: true) do |f|
+          .exhibit__main__itemProfile__inputForm__top
+            商品の情報を入力      
+          .exhibit__main__itemProfile__inputForm__sellImage
+            .exhibit__main__itemProfile__inputForm__sellImage__upload
+              .exhibit__main__itemProfile__inputForm__sellImage__upload__head
+                .notation
+                  出品画像
+                .formRequire
+                  必須
+              .exhibit__main__itemProfile__inputForm__sellImage__upload__attention
+                最大5枚までアップロードできます
+              .exhibit__main__itemProfile__inputForm__sellImage__upload__image10
+                .prev-content
+                .label-content
+
+                  = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+                    
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :images do |i|
+
+                    = i.file_field :image_url, class: "hidden-field"
+                    = i.check_box:_destroy, class: "hidden-checkbox"
+
+                  - @item.images.length.upto(4) do |i|
+                    %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
+                
+          .exhibit__main__itemProfile__inputForm__sellGoods
+            .exhibit__main__itemProfile__inputForm__sellGoods__name
+              .notation
+                商品名
+              .formRequire
+                必須
+            = f.text_field :name, class: "exhibitInput", placeholder: "商品名（必須40文字まで）"
+
+            .exhibit__main__itemProfile__inputForm__sellGoods__description
+              .notation
+                商品の説明
+              .formRequire
+                必須
+            = f.text_area :description, class: "exhibitTextarea", placeholder: "商品の説明（必須1,000文字以内）（色、重さ、素材、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+            .exhibit__main__itemProfile__inputForm__sellGoods__wordCount
+              0/1000
+
+          .exhibit__main__itemProfile__inputForm__sellDetails
+            .exhibit__main__itemProfile__inputForm__sellDetails__title
+              商品の詳細
+            .exhibit__main__itemProfile__inputForm__sellDetails__formBox  
+              .exhibit__main__itemProfile__inputForm__sellDetails__formBox__category
+                .exhibit__main__itemProfile__inputForm__sellDetails__formBox__category__select
+                  .notation
+                    カテゴリー
+                  .formRequire
+                    必須
+                =f.text_field :category, class: "exhibitInput", placeholder: "例）レディース、メンズ"
+              .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
+                .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
+                  .notation
+                    ブランド
+                  .formAny
+                    任意
+                =f.text_field :brand, class: "exhibitInput", placeholder: "例）シャネル"
+              .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state
+                .exhibit__main__itemProfile__inputForm__sellDetails__formBox__state__select
+                  .notation
+                    商品の状態
+                  .formRequire
+                    必須
+                =f.text_field :condition, class: "exhibitInput", placeholder: "例）未使用、新品に近い、目立った汚れ無し"
+
+          .exhibit__main__itemProfile__inputForm__delivery
+            .exhibit__main__itemProfile__inputForm__delivery__leftBox
+              .exhibit__main__itemProfile__inputForm__delivery__leftBox__title
+                配送について
+                =link_to "#", class: "questionMark" do
+                  (?)
+            .exhibit__main__itemProfile__inputForm__delivery__formBox  
+              .exhibit__main__itemProfile__inputForm__delivery__formBox__burden
+                .exhibit__main__itemProfile__inputForm__delivery__formBox__burden__select
+                  .notation
+                    配送料の負担
+                  .formRequire
+                    必須
+                =f.text_field :deriver_charge,class: "exhibitInput", placeholder: "例）送料込み（出品者負担）、着払い（購入者負担）"
+              .exhibit__main__itemProfile__inputForm__delivery__formBox__area
+                .exhibit__main__itemProfile__inputForm__delivery__formBox__area__select
+                  .notation
+                    配送元の地域
+                  .formRequire
+                    必須
+                =f.text_field :area, class: "exhibitInput", placeholder: "例）東京、大阪、京都、愛知、北海道、福岡"
+              .exhibit__main__itemProfile__inputForm__delivery__formBox__days
+                .exhibit__main__itemProfile__inputForm__delivery__formBox__days__select
+                  .notation
+                    配送までの日数
+                  .formRequire
+                    必須
+                =f.text_field :deriver_date, class: "exhibitInput", placeholder: "例）1〜2日以内に発送、4〜7日以内に発送"
+
+          .exhibit__main__itemProfile__inputForm__sellPrice
+            .exhibit__main__itemProfile__inputForm__sellPrice__leftBox
+              .exhibit__main__itemProfile__inputForm__sellPrice__leftBox__title
+                販売価格(300〜9,999,999)
+                =link_to "#", class: "questionMark" do
+                  (?)
+            .exhibit__main__itemProfile__inputForm__sellPrice__calculation
+              .exhibit__main__itemProfile__inputForm__sellPrice__calculation__priceForm
+                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__priceForm__amountOfSales
+                  .notation
+                    価格
+                  .formRequire
+                    必須
+                = f.text_field :price,class: "exhibitInput", placeholder: "例）300〜9,999,999"
+              .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission
+                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__title
+                  販売手数料(10%)
+                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__commission__count
+                  %p -
+              .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit
+                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__title
+                  販売利益
+                .exhibit__main__itemProfile__inputForm__sellPrice__calculation__profit__count
+                  %p -
+
+          .exhibit__main__itemProfile__inputForm__warning
+            .exhibit__main__itemProfile__inputForm__warning_links
+              %span.exhibit__main__itemProfile__inputForm__warning__links__link
+              =link_to "#" do
+                禁止されている出品
+              、
+              %span.exhibit__main__itemProfile__inputForm__warning__links__link
+              =link_to "#" do
+                行為
+              を必ずご確認ください。
+              %br
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              %span.exhibit__main__itemProfile__inputForm__warning__links__link
+              =link_to "#" do
+                偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+              %br
+              また、出品をもちまして
+              %span.exhibit__main__itemProfile__inputForm__warning__links__link
+              =link_to "#" do
+                加盟店規約
+              に同意したことになります。
+            = f.submit :出品する ,class: "exhibitSubmit1"
+            =link_to root_path , class: "exhibitSubmit2" do
+              もどる
+
+
+    .exhibit__footer
+      .exhibit__footer__lists
+        =link_to "#", class: "exhibit__footer__lists__list" do
+          プライバシーポリシー
+        =link_to "#", class: "exhibit__footer__lists__list" do
+          メルカリ利用規約
+        =link_to "#", class: "exhibit__footer__lists__list" do
+          特定商取引に関する表記   
+      =link_to "#" , class: ".exhibit__footer__logo" do
+        =image_tag asset_path("logo.png"),class: "exhibit__footer__logo__image"
+      .exhibit__footer__ending
+        © Mercari, Inc.

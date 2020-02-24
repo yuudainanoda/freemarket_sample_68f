@@ -168,6 +168,7 @@ Things you may want to cover:
 |address_id|reference|foreign_key:true|
 |delivery_dates_id|reference|foreign_key:true|
 |order_status_id|reference|foreign_key:true|
+|order_id|reference|foreign_key:true|
 
 
 ### Association
@@ -177,7 +178,7 @@ Things you may want to cover:
 - has_many :message_users,through::messages,source::user, dependent: :destroy
 - has_many :like_users,through::likes,source::user, dependent: :destroy
 - has_one :profit
-- belongs_to :order
+- has_one :order
 - belongs_to :address
 - belongs_to :user
 - belongs_to :brand
@@ -256,7 +257,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|brand|string|unique|
+|name|string|unique|
 
 ### Association
 - has_many :items, dependent: :destroy
@@ -266,7 +267,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|condition|string||
+|howCondition|string||
 
 ### Association
 - has_many :items, dependent: :destroy
@@ -276,7 +277,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|charge|string||
+|whichCharge|string||
 
 ### Association
 - has_many :items, dependent: :destroy
