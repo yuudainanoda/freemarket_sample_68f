@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
+    binding.pry
     @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -104,7 +105,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :birth_year,
       :birth_month,
       :birth_day,
-      street_address_attributes: [:id, :zipcode, :city, :address,:prefecture,:first_name,:first_name_kana,:last_name,:last_name_kana,:telephone,:_destroy]
+      street_address_attributes: [:id, :zipcode, :city, :address,:prefecture,:first_name,:first_name_kana,:last_name,:last_name_kana,:building,:telephone,:_destroy]
     )
   end
 
