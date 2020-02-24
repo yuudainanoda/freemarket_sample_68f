@@ -19,8 +19,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
-    @user.save
-    redirect_to root_path
+    if  @user.save
+
+       @user
+    else
+    redirect_to new_path
+    end
     # session ["devise.regist_data"] = {user:@user.attributes}
     # session ["devise.regist_data"] [:user]["password"]= params[:user][:password]
     # @telephone = @user.build_telephone
