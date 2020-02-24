@@ -10,15 +10,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def new 
     @user = User.new
+    @user.build_street_address
   end
 
   def create
-    @user = User.new(sing_up_params)
-    binding.pry
+    @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
+    @user.save
+    redirect_to root_path
     # session ["devise.regist_data"] = {user:@user.attributes}
     # session ["devise.regist_data"] [:user]["password"]= params[:user][:password]
     # @telephone = @user.build_telephone
@@ -88,12 +90,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  protected
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  private
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :email,
+      :first_name,
+      :first_name_kana,
+      :last_name,
+      :last_name_kana,
+      :birth_year,
+      :birth_month,
+      :birth_day,
+      street_address_attributes: [:id, :zipcode, :city, :address,:prefecture,:first_name,:first_name_kana,:last_name,:last_name_kana,:telephone,:_destroy]
+    )
   end
+
+  # protected
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up,  keys: [:attribute])
+  # end
   #  protected
   #  def telephone_params
   #  params.require(:telephone).permit(:telephone)
   #  end
+  # 必要だと思っていた記述ですが、現時点（ユーザー新規登録機能完成時点）で不要なためコメントアウト、全ての機能が完成して問題なければ削除の予定
 end
