@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  # has_many :messages
   # has_many :item_images
   has_many :messages
   # has_many :likes
