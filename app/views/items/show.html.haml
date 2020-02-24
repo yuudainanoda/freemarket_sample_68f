@@ -113,14 +113,18 @@
         .top__content__form__comment__btn   
           = f.submit 'コメントする', class: ' top__content__form__comment__btn__send'
 
+    .loads
+      = render partial: 'linkskitada', locals: { order: @orders }
+    -# .top__content__links
+      
+    -#   = link_to order_item_path(order.id) , class: "top__content__links__back" do
+    -#     < 前の商品
+    -#   = link_to "#" , class: "top__content__links__back" do
+    -#     後ろの商品 >
+    -# = link_to "#" , class: "top__content__edit" do
+    -#   ベビー・キッズをもっと見る
 
-    .top__content__links
-      = link_to "#" , class: "top__content__links__back" do
-        < 前の商品
-      = link_to "#" , class: "top__content__links__back" do
-        後ろの商品 >
-    = link_to "#" , class: "top__content__edit" do
-      ベビー・キッズをもっと見る
+      -# = link_to item_path(item.id) ,mathod: :get, class: "line" do
 
 
 
