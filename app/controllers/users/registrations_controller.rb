@@ -20,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new and return
     end
     @user.save
+    redirect_to root_path
     # session ["devise.regist_data"] = {user:@user.attributes}
     # session ["devise.regist_data"] [:user]["password"]= params[:user][:password]
     # @telephone = @user.build_telephone
@@ -90,7 +91,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   private
-  def user_params
+  def sign_up_params
     params.require(:user).permit(
       :nickname,
       :email,
