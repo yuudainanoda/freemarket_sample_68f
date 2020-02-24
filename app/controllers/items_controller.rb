@@ -1,10 +1,18 @@
 class ItemsController < ApplicationController
+
+  def index
+    @items = Item.all.limit(3)
+
+  end
+
+  def new
+    @item = Item.new
+    
+  end
   def show
     @item = Item.find(params[:id])
     @image = @item.images.build
     @message = Message.new
-    @messages = @item.messages.includes(:id)
-
   end
 
   def new
