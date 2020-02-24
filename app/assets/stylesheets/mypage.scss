@@ -1,0 +1,90 @@
+.l-container.clearfix{
+  margin: 40px auto 0;
+  width: 1020px;
+  .l-content{
+    float: right;
+    width: 700px;
+    margin: 0 ;
+    .mypage-user-icon{
+      height: 200px;
+      position: relative;
+      padding: 20px;
+      background-image: asset-url("back.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      .mypage-user-midle{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        color: #333;
+        .figure{
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+        }
+        .name{
+          margin: 8px 0 0;
+          font-size: 14px;
+        }
+        .mypage-number{
+          margin: 14px 0 0;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .mypage-tab-container-notification-todo{
+      margin: 0;
+      background: #fff;
+      padding: 0;
+      .mypage-tabs{
+        list-style: none;
+        border: 0;
+        background: #eee;
+        font-size: 0;
+        display: flex;
+        .active{
+          // width: 50%;
+          // display: inline-block;
+          text-align: center;
+          position: relative;
+          // display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          width: 50%;
+        }
+      }
+      .tab-content{
+        li{
+          list-style: none;
+        }
+        .mypage-item-link{
+          display: block;
+          min-height: 80px;
+          padding: 16px;
+          color: #333;
+          list-style: none;
+        }
+      }
+    }
+  }
+  .l-side{
+    float: right;
+    
+    .mypage-nav{
+      .mypage-nav-list{
+      }
+      .mypage-nav-head{
+
+      }  
+    }
+  }  
+}

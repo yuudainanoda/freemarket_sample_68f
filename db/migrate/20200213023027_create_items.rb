@@ -10,7 +10,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string  :deriver_charge,	null:false
       t.string  :area,	null:false
       t.string  :deriver_date,	null:false
-      
       # t.references	:condition,	foreign_key:true
       # t.reference	category_id	foreign_key:true
       # t.reference	brand_id	foreign_key:true
@@ -19,6 +18,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       # address_id	reference	foreign_key:true
       # delivery_dates_id	reference	foreign_key:true
       # order_status_id	reference	foreign_key:true
+      t.string :name
+      t.integer :price
+      t.text :image
+      t.integer :order_id
       t.timestamps
     end
   end
