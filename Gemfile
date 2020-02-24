@@ -86,4 +86,8 @@ gem 'pry-byebug'
 gem 'payjp'
 
 gem 'dotenv'
+gem 'seed-fu'
+gem 'active_hash'
+gem 'ancestry'
+
 

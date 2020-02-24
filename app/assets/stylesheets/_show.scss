@@ -179,7 +179,43 @@
       
     }
   }
-  
+  &__bye {
+    text-align: center;
+    line-height: 48px; 
+    background-color: red;
+    border: 1px solid red;
+    width: 60%;
+    font-size: 18px;  
+    margin: 0 auto;
+    
+    &__load {
+      color: #fff;
+      
+      
+
+
+    }
+  }
+
+  &__deleat {
+    text-align: center;
+    background-color: black;
+    width: 60%;
+    margin: 10px auto;
+    line-height: 48px;
+    border: 1px solid black;   
+    font-size: 18px;
+    &__last {
+      color: #fff; 
+
+      
+      
+      
+
+
+    }
+  }
+
 
   &__links {
     display: flex;

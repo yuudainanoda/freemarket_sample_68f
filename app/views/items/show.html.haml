@@ -16,7 +16,9 @@
       product3
 
 .top
+  = render partial: 'deta_edit', locals: { item: @items }
   
+
   .top__content
     .top__content__form
     
@@ -125,7 +127,6 @@
     -#   ベビー・キッズをもっと見る
 
       -# = link_to item_path(item.id) ,mathod: :get, class: "line" do
-
 
 
 
