@@ -21,17 +21,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_083853) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.text "description", null: false
-    t.string "brand"
-    t.string "category", null: false
-    t.string "condition", null: false
-    t.string "deriver_charge", null: false
-    t.string "area", null: false
-    t.string "deriver_date", null: false
-    t.text "image"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -51,6 +40,12 @@ ActiveRecord::Schema.define(version: 2020_02_20_083853) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "prefecture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "street_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
@@ -66,6 +61,12 @@ ActiveRecord::Schema.define(version: 2020_02_20_083853) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_street_addresses_on_user_id"
+  end
+
+  create_table "telephones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "telephone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
