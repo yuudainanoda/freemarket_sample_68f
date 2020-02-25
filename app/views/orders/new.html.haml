@@ -10,15 +10,13 @@
         .confirmation__main__itemProfile__buy
           .confirmation__main__itemProfile__buy__inner
             .confirmation__main__itemProfile__buy__inner__photo
-            -# 修正項目
-              -# = image_tag @item.images[0].image_url.url , class:"sample-img",size:"80x80"
+              = image_tag @item.images[0].image_url.url , class:"sample-img",size:"80x80"
             .confirmation__main__itemProfile__buy__inner__titleprice
               %p.confirmation__main__itemProfile__buy__inner__titleprice__title
-              -# 修正項目
-                -# = @order.item.name
+                = @item.name
               %p.confirmation__main__itemProfile__buy__inner__titleprice__price
                 %span#id_value.class_zeikomi
-                  ¥2,500
+                  = @item.price
                 %span{class:"tax"}
                   (税込) 送料込み
         .confirmation__main__itemProfile__price-confirmation
@@ -27,7 +25,7 @@
               .confirmation__main__itemProfile__price-confirmation__inner__payment__cell
                 支払い金額
               .confirmation__main__itemProfile__price-confirmation__inner__payment__include-tax
-                ¥2,500
+                = @item.price
             .confirmation__main__itemProfile__price-confirmation__inner__have-point
               =check_box_tag :use_point
               =label_tag :use_point, "ポイントを使用（所持ポイント：p０）"
@@ -56,11 +54,17 @@
                   = link_to "#" ,class:"change-h" do
                     変更する
               .buyer-info__address
-                %p 〒000-0000
+                〒
+                %span
+                = @user.street_address.zipcode
                 %br
-                大阪府大阪市難波スカイオ
+                = @user.street_address.city
+                %span
+                = @user.street_address.address
+                - if @user.street_address.building.present?
+                  = @user.street_address.building
                 %br
-                オオハシケンジ
+                = @user.nickname
           %section.buy-content
             %p.buy-content__message
             %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
@@ -68,9 +72,9 @@
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
             .app-introduce
               = link_to "" do    
-                = image_tag src="/assets/duellinks03.png", size: "140x43", class: "abtn"
+                = image_tag asset_path("duellinks03.png"), size: "140x43", class: "abtn"
               = link_to "" do
-                = image_tag src="/assets/Google-Play-Badge.png", size: "140x43", class: "gbtn"
+                = image_tag asset_path("Google-Play-Badge.png"), size: "140x43", class: "gbtn"
     .confirmation__footer
       .confirmation__footer__message
         %ul
@@ -85,6 +89,6 @@
               特定商取引に関する表記
       .confirmation__footer__logo
         = link_to root_path do    
-          = image_tag "logo.png", size: "145x55", class: "abtn"
+          = image_tag asset_path("logo.png"), size: "145x55", class: "abtn"
         %p.license
         © Furima, Inc.
