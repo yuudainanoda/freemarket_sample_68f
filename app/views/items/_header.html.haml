@@ -16,12 +16,14 @@
           ブランド
       .header__box__navi__right
         - if user_signed_in?
-          =link_to destroy_user_session_path , method: :delete, class:"header__box__navi__right__new" do
+          = link_to user_path(current_user), class: "header__box__navi__right__new" do
+            マイページ
+          = link_to destroy_user_session_path , method: :delete, class: "header__box__navi__right__new" do
             ログアウト
         - else
-          =link_to new_user_session_path , class:"header__box__navi__right__login" do
+          = link_to new_user_session_path , class:"header__box__navi__right__login" do
             ログイン
-          =link_to new_user_registration_path , class:"header__box__navi__right__new" do
+          = link_to new_user_registration_path , class:"header__box__navi__right__new" do
             新規会員登録
     =link_to new_item_path do
       出品

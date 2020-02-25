@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all.limit(3).order(id: "DESC")
@@ -26,6 +26,10 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_update_params)
+  end
+
+  def destroy
+    item.destroy
   end
 
   def set_item

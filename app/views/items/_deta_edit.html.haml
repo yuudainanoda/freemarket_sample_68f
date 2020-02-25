@@ -78,15 +78,21 @@
             %br 不快な言葉遣いなどは利用制限や大会
           .top__content__comment__btn   
             = f.submit 'コメントする', class: "send-btn"
-    .top__content__deleat
-      - if user_signed_in? && current_user.id == @item.user_id        
-        = link_to "#" , class: "top__content__deleat__last" do  
-          編集
+    .top__content__edit
+      - if user_signed_in? && current_user.id == @item.user_id
+        = link_to edit_item_path(@item) do
+          .btn      
+            編集
+      - if user_signed_in? && current_user.id == @item.user_id
+        = link_to item_path(@item) do
+          .btn.brown
+            削除
     .top__content__bye
       - if user_signed_in?
         - unless current_user.id == @item.user_id
-          = link_to "#" , class: "bye-btn" do  
-            商品を購入する
+          = link_to new_item_order_path(@item), method: :get do
+            .bye-btn
+              商品を購入する
     .top__content__links
       - if @item.previous.present?
         = link_to item_path(@item.previous) do
