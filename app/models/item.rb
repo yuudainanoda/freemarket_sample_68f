@@ -1,14 +1,10 @@
 class Item < ApplicationRecord
-  # has_many :messages
-  # has_many :item_images
-  has_many :messages
+  has_many :messages, dependent: :destroy
   # has_many :likes
-  # has_many :flags
   # has_many :message_users,through::messages,source::user
   # has_many :like_users,through::likes,source::user
-  # has_many :flag_users,through::flags,source::user
-  has_many :images
-  accepts_nested_attributes_for :images
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_one :order
   # belongs_to :profit
   # belongs_to :prefecture
@@ -19,8 +15,6 @@ class Item < ApplicationRecord
   # belongs_to :order_status
   # belongs_to :size
   belongs_to :user
-  has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
 
   validates :name, presence: true
   validates :price, presence: true
@@ -31,4 +25,11 @@ class Item < ApplicationRecord
   validates :area, presence: true
   validates :deriver_date, presence: true
 
+  def previous
+    user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
+  end
+
+  def next
+    user.items.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
+  end
 end
