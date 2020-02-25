@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
   def index
-    @items = Item.all.limit(3)
+    @items = Item.all.limit(3).order(id: "DESC")
   end
 
   def new
@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
   def show
     @message = Message.new
+    @messages = @item.messages.order(id: "ASC").includes(:user)
   end
 
   def edit

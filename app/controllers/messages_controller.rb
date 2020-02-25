@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Messages.create(message_params)
+    @message = Message.create(message_params)
+    redirect_to item_path(params[:item_id])
   end
 
   def message_params

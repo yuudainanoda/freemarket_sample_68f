@@ -1,8 +1,6 @@
 class Item < ApplicationRecord
-  # has_many :messages
   has_many :messages
   # has_many :likes
-  # has_many :flags
   # has_many :message_users,through::messages,source::user
   # has_many :like_users,through::likes,source::user
   has_many :images
@@ -26,4 +24,12 @@ class Item < ApplicationRecord
   validates :deriver_charge, presence: true
   validates :area, presence: true
   validates :deriver_date, presence: true
+
+  def previous
+    user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
+  end
+
+  def next
+    user.items.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
+  end
 end

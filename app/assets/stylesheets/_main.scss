@@ -146,6 +146,9 @@
       &__src{
         position: relative;
         margin-bottom: 20px;
+        .pict{
+          object-fit: contain;
+        }
         .number {
           position: absolute;
           color: white;
@@ -182,39 +185,27 @@
     line-height: 1.4;
     font-weight: bold;
   }
-
   &__productbox{
-
     &__producthead{
-     
       text-align: center;
-
       font-weight: bold;
       font-size: 20px;
-
       .line {    
         text-decoration: none;
         color: #3CCACE;    
-
-        
       }    
-      
     }
     .wrapper {
       display: flex;
       justify-content: center;
     }
-
     &__productlists{
       width: 300px;
       margin: 26px 0;
-
       &__productlist{
         width: 220px;
         display: inline-block;
-        
         &__sold {
-        
           width: 0;
           height: 0;
           border-top: 1px solid white ;
@@ -223,7 +214,6 @@
           border-left: 60px solid white ;
           z-index:100;
           position: relative;
-          
           &__inner{
             transform: rotate(-45deg);
             font-size: 28px;
@@ -235,23 +225,17 @@
         }
         .line {
           text-decoration: none;
-       
         }
-
-        &__img{
-         
+        img{
           background-color: white;
           width: 220px;
-          height: 150px;
-          overflow: hidden;
-          margin: 0;
-          z-index: auto;
+          height: 180px;
+          object-fit: cover;
         }
         &__body{
           background-color: white;
           color: #333;
           padding: 16px;
-         
           &__name{
             overflow: hidden;
             line-height: 1.5;
@@ -262,7 +246,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             &__price{
 
             }
@@ -274,10 +257,8 @@
                 text-rendering: auto;
               }
               &__value{
-
               }
             }
-            
           }
           &__tax{
             font-size: 10px;
@@ -288,5 +269,3 @@
     }
   }
 }
-
-

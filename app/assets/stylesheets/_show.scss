@@ -74,7 +74,6 @@
       }
       &__table{
         width: 100%;
-        height: 445px;
         border: 1px solid#f8f8f8;
         &__line{
           display: flex;
@@ -104,21 +103,20 @@
       &__option{
         display: flex;
         justify-content: space-between;
-        margin-top: 10px;
-        &__form{
-          &__like{
-            margin-right: auto;
-            padding: 6px 10px;
-            border-radius: 40px;
-            border: 1px solid #ffb340;
-            color: #3ccace;
-          }
+        margin-top: 20px;
+        &__like{
+          margin-right: auto;
+          padding: 10px 20px;
+          border-radius: 40px;
+          border: 1px solid #ffb340;
+          color: #3ccace;
         }
         &__report{
           border: 1px solid #333;
           border-radius: 4px;
-          padding: 6px 10px;
+          padding: 8px 10px;
           display: flex;
+          height: 30px;
         }
       }
     }
@@ -128,16 +126,14 @@
       height: 300px;
       margin: 10px 0;
       text-align: center;
-      &__btn{
-        &__send{
-        line-height: 48px;
-        background-color: #3ccace;
-        border: 1px solid #3ccace;
-        color: #fff;
-        width: 60%;
-        font-size: 18px;
-        border-radius: 25px;
-        }
+      .send-btn{
+      line-height: 48px;
+      background-color: #3ccace;
+      border: 1px solid #3ccace;
+      color: #fff;
+      width: 60%;
+      font-size: 18px;
+      border-radius: 25px;
       }
       &__box{
         height: 100px;
@@ -153,45 +149,44 @@
         }
       }
     }
-  &__bye{
-    text-align: center;
-    line-height: 48px; 
-    background-color: red;
-    border: 1px solid red;
-    width: 60%;
-    font-size: 18px;  
-    margin: 0 auto;
-    &__load{
+    .bye-btn{
+      text-align: center;
+      line-height: 48px; 
+      background-color: red;
+      border: 1px solid red;
+      width: 60%;
+      font-size: 18px;  
+      margin: 0 auto;
       color: #fff;
     }
-  }
-  &__deleat{
-    text-align: center;
-    background-color: black;
-    width: 60%;
-    margin: 10px auto;
-    line-height: 48px;
-    border: 1px solid black;   
-    font-size: 18px;
-    &__last{
-      color: #fff;
+    &__deleat{
+      text-align: center;
+      background-color: black;
+      width: 60%;
+      margin: 10px auto;
+      line-height: 48px;
+      border: 1px solid black;   
+      font-size: 18px;
+      &__last{
+        color: #fff;
+      }
     }
-  }
-  &__links{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    &__back{
+    &__links{
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+      font-size: 16px;
+      &__back{
+        color: #3ccace;
+        text-decoration: none;
+      }
+    }
+    &__edit{
       color: #3ccace;
+      font-size: 24px;
+      margin: 44px 0 8px;
+      font-weight: bold;
       text-decoration: none;
     }
-  }
-  &__edit{
-    color: #3ccace;
-    font-size: 24px;
-    margin: 44px 0 8px;
-    font-weight: bold;
-    text-decoration: none;
-  }
   }
 }

@@ -1,93 +1,101 @@
-.top__content
-  .top__content__box
-    .top__content__box__name
-      = @item.name
-    .top__content__box__body
-      = image_tag @item.images[0].image_url.url, class: "main-view"
-      .top__content__box__body__three
-        - @item.images.each do |image|
-          = image_tag image.image_url.url, class: "view-list"
-    .top__content__box__price
-      .top__content__box__price__japan
-        = @item.price 
-        円
-      .top__content__box__price__plus
-        （税込）送料込み
-    .top__content__box__detail
-      = @item.name
-    .top__content__box__table
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          出品者
-        .top__content__box__table__line__right
-          = @item.user.nickname
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          カテゴリー
-        .top__content__box__table__line__right
-          = link_to "#" , class: "category-link" do
-            = @item.category
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          ブランド
-        .top__content__box__table__line__right
-          = @item.brand
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          商品のサイズ
-        .top__content__box__table__line__right
-          
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          商品の状態
-        .top__content__box__table__line__right
-          = @item.condition
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          発送量の負担
-        .top__content__box__table__line__right
-          = @item.deriver_charge
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          発送元の地域
-        .top__content__box__table__line__right
-          = link_to "#" , class: "top__content__box__table__line__right__first" do
-            = @item.area
-      .top__content__box__table__line
-        .top__content__box__table__line__left
-          発送日の目安
-        .top__content__box__table__line__right
-          = @item.deriver_date
-    .top__content__box__option
-      .top__content__box__option__form
-        .top__content__box__option__form__like
+.top
+  .top__content
+    .top__content__box
+      .top__content__box__name
+        = @item.name
+      .top__content__box__body
+        = image_tag @item.images[0].image_url.url, class: "main-view"
+        .top__content__box__body__three
+          - @item.images.each do |image|
+            = image_tag image.image_url.url, class: "view-list"
+      .top__content__box__price
+        .top__content__box__price__japan
+          = @item.price 
+          円
+        .top__content__box__price__plus
+          （税込）送料込み
+      .top__content__box__detail
+        = @item.name
+      .top__content__box__table
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            出品者
+          .top__content__box__table__line__right
+            = @item.user.nickname
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            カテゴリー
+          .top__content__box__table__line__right
+            = link_to "#" , class: "category-link" do
+              = @item.category
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            ブランド
+          .top__content__box__table__line__right
+            = @item.brand
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            商品のサイズ
+          .top__content__box__table__line__right
+            
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            商品の状態
+          .top__content__box__table__line__right
+            = @item.condition
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            発送量の負担
+          .top__content__box__table__line__right
+            = @item.deriver_charge
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            発送元の地域
+          .top__content__box__table__line__right
+            = link_to "#" , class: "top__content__box__table__line__right__first" do
+              = @item.area
+        .top__content__box__table__line
+          .top__content__box__table__line__left
+            発送日の目安
+          .top__content__box__table__line__right
+            = @item.deriver_date
+      .top__content__box__option
+        .top__content__box__option__like
           ★ お気に入り0
-      .top__content__box__option__report
-        .top__content__box__option__report__icon
+        .top__content__box__option__report
           %i.fas.fa-flag
-        .top__content__box__option__report__text
-          不適切な商品の通報
-  .top__content__comment
-    = form_for [@item, @message] do |f|
-      = f.text_field :text, class: 'top__content__comment__box', placeholder:  'type a message'        
-      .top__content__comment__box__text
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br 不快な言葉遣いなどは利用制限や大会
-      .top__content__comment__btn   
-        = f.submit 'コメントする', class: 'top__content__comment__btn__send'
-  - if user_signed_in? && current_user.id == @item.user_id        
+          %span
+            不適切な商品の通報
+    .top__content__comment
+      -@messages.each do |m|
+        %p
+        = m.text
+      - if user_signed_in?
+        = form_for [@item, @message] do |f|
+          = f.text_field :text, class: 'top__content__comment__box', placeholder:  'type a message'        
+          .top__content__comment__box__text
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br 不快な言葉遣いなどは利用制限や大会
+          .top__content__comment__btn   
+            = f.submit 'コメントする', class: "send-btn"
     .top__content__deleat
-      = link_to "#" , class: "top__content__deleat__last" do  
-        編集
-  - else
+      - if user_signed_in? && current_user.id == @item.user_id        
+        = link_to "#" , class: "top__content__deleat__last" do  
+          編集
     .top__content__bye
-      = link_to "#" , class: "top__content__bye__load" do  
-        商品を購入する
-  .top__content__links
-    = link_to "#" , class: "top__content__links__back" do
-      < 前の商品
-    = link_to "#" , class: "top__content__links__back" do
-      後ろの商品 >
-  = link_to "#" , class: "top__content__edit" do
-    = @item.category
-    %span をもっと見る
+      - if user_signed_in?
+        - unless current_user.id == @item.user_id
+          = link_to "#" , class: "bye-btn" do  
+            商品を購入する
+    .top__content__links
+      - if @item.previous.present?
+        = link_to item_path(@item.previous) do
+          %span <
+          = @item.previous.name
+      - if @item.next.present?
+        = link_to item_path(@item.next) do
+          = @item.next.name
+          %span >
+    = link_to "#" , class: "top__content__edit" do
+      = @item.category
+      %span をもっと見る
