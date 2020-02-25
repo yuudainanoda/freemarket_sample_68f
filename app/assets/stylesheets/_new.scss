@@ -1,6 +1,5 @@
 .sign_in{
   position: relative;
-  // min-height: 100%;
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
@@ -21,7 +20,7 @@
     .login-panel{
       max-width: 456px;
       margin: 0 auto;
-      background: #fff;
+      background: $white;
       .login-no-account{
         padding: 40px 64px;
         text-align: center;
@@ -37,7 +36,7 @@
           margin: 8px 0 0;
           border: 1px solid #0099e8;
           background: #0099e8;
-          color: #fff;
+          color: $white;
           line-height: 40px;
           
       }
@@ -57,7 +56,7 @@
 
       .facebook-login{
         background: #385185;
-        color: #fff;
+        color: $white;
         display: block;
         width: 100%;
         line-height: 48px;
@@ -78,7 +77,7 @@
           font-variant: normal;
           text-decoration: none;
           line-height: 1;
-          color: #fff;
+          color: $white;
         }
       }
       .Google-login{

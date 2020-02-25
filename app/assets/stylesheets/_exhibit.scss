@@ -24,7 +24,7 @@ html{
 
   &__main{
     &__itemProfile{
-      background-color: #fff;
+      background-color: $white;
       width: 700px;
       margin: 0 auto;
 
@@ -157,7 +157,7 @@ html{
             padding: 10px 16px 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
-            background: #fff;
+            background: $white;
             line-height: 1.5;
             font-size: 16px;
           }
@@ -201,7 +201,7 @@ html{
                 padding: 10px 16px 8px;
                 border-radius: 4px;
                 border: 1px solid #ccc;
-                background: #fff;
+                background: $white;
                 line-height: 1.5;
                 font-size: 16px;
               }
@@ -226,7 +226,7 @@ html{
                 padding: 10px 16px 8px;
                 border-radius: 4px;
                 border: 1px solid #ccc;
-                background: #fff;
+                background: $white;
                 line-height: 1.5;
                 font-size: 16px;
               }
@@ -339,7 +339,7 @@ html{
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
-      color: #fff;
+      color: $white;
       font-size: 12px;
       vertical-align: top;
     }
@@ -350,7 +350,7 @@ html{
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
-      color: #fff;
+      color: $white;
       font-size: 12px;
       vertical-align: top;
     }
@@ -363,7 +363,7 @@ html{
       padding: 10px 16px 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
-      background: #fff;
+      background: $white;
       line-height: 1.5;
       font-size: 16px;
     }
@@ -375,7 +375,7 @@ html{
       padding: 10px 16px 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
-      background: #fff;
+      background: $white;
       line-height: 1.5;
       font-size: 16px;
     }
@@ -388,7 +388,7 @@ html{
       font-size: 14px;
       background: #ea352d;
       border: 1px solid #ea352d;
-      color: #fff;
+      color: $white;
       cursor: pointer;
       text-align: center;  
       text-decoration: none;
@@ -403,7 +403,7 @@ html{
       font-size: 17px;
       background: #aaa;
       border: 1px solid #aaa;
-      color: #fff;
+      color: $white;
       cursor: pointer;
       text-align: center;
       text-decoration: none;

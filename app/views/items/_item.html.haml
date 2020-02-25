@@ -1,4 +1,3 @@
-
 .pickupcontainer__productbox__productlists
   .pickupcontainer__productbox__productlists__productlist
     = link_to item_path(item.id) ,mathod: :get, class: "line" do
@@ -6,15 +5,11 @@
         .pickupcontainer__productbox__productlists__productlist__sold
           .pickupcontainer__productbox__productlists__productlist__sold__inner
             SOLD
-        
-
       .pickupcontainer__productbox__productlists__productlist__img
-        = image_tag "a007.png"
+        = image_tag item.images[0].image_url.url
       .pickupcontainer__productbox__productlists__productlist__body
-        .pickupcontainer__productbox__productlists__productlist__body__name
-          
+        .pickupcontainer__productbox__productlists__productlist__body__name         
           = item.name
-          
         .pickupcontainer__productbox__productlists__productlist__body__details
           .pickupcontainer__productbox__productlists__productlist__body__details__price
             = item.price 
