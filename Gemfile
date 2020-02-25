@@ -85,7 +85,7 @@ gem 'fog-aws'
 gem 'pry-byebug'
 gem 'payjp'
 
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'seed-fu'
 gem 'active_hash'
 gem 'ancestry'
