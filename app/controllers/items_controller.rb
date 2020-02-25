@@ -9,12 +9,6 @@ class ItemsController < ApplicationController
     
   end
   
-  def show
-    @item = Item.find(params[:id])
-    @image = @item.images.build
-    @message = Message.new
-  end
-
   def edit
     @item = Item.find(params[:id])
   end
@@ -22,6 +16,12 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_update_params)
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @image = @item.images.build
+    @message = Message.new
   end
 
   private
