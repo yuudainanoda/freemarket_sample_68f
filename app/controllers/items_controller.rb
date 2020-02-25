@@ -6,7 +6,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    
+    @item.images.new
+  end
+
+  def create
+     @item = Item.new(item_params)
+     @item.save
+     redirect_to root_path
   end
   
   def edit
