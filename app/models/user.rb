@@ -28,5 +28,4 @@ class User < ApplicationRecord
   validates :first_name,:last_name, presence: true,
   format: { with:/\A[ぁ-んァ-ン一-龥]/}
   has_many :orders
-
 end
