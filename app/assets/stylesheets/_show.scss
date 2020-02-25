@@ -130,7 +130,7 @@
       line-height: 48px;
       background-color: #3ccace;
       border: 1px solid #3ccace;
-      color: #fff;
+      color: $white;
       width: 60%;
       font-size: 18px;
       border-radius: 25px;
@@ -159,10 +159,13 @@
         height: 50px;
         line-height: 48px;
         font-size: 18px;
-        color: #fff;
+        color: $white;
         margin-top: 15px;
+        a{
+          color: $white;
+        }
       }
-      .brown{
+      .gray{
         background-color: $l777;
         border: 1px solid $l777;
       }
@@ -171,13 +174,13 @@
       text-align: center;
       .bye-btn{
         margin: 0 auto;
-        border: 1px solid red;   
-        background-color: red;
+        border: 1px solid $ea352d;   
+        background-color: $ea352d;
         width: 60%;
         height: 50px;
         line-height: 48px;
         font-size: 18px;
-        color: #fff;
+        color: $white;
       }
     }
     &__links{

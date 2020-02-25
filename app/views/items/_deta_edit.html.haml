@@ -84,9 +84,10 @@
           .btn      
             編集
       - if user_signed_in? && current_user.id == @item.user_id
-        = link_to item_path(@item) do
-          .btn.brown
-            削除
+        .btn.gray
+          = link_to "削除", item_path(@item),class: "delete-btn", method: :delete, data: {confirm: "「#{@item.name}」を削除しますか?",
+                                                                        cancel: "キャンセル",
+                                                                        commit: "削除" }
     .top__content__bye
       - if user_signed_in?
         - unless current_user.id == @item.user_id

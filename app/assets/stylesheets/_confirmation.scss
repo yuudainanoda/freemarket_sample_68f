@@ -24,7 +24,7 @@ html{
 
   &__main{
     &__itemProfile{
-      background-color: #fff;
+      background-color: $white;
       width: 700px;
       margin: 0 auto;
       &__top{
@@ -172,7 +172,7 @@ html{
           .red-btn{
             border: 1px solid #888;
             background: red;
-            color: #fff;
+            color: $white;
             display: block;
             width: 100%;
             line-height: 48px;

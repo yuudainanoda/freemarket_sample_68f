@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
   # has_many :likes
   # has_many :message_users,through::messages,source::user
   # has_many :like_users,through::likes,source::user
-  has_many :images
-  accepts_nested_attributes_for :images
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_one :order
   # belongs_to :profit
   # belongs_to :prefecture
