@@ -18,10 +18,10 @@ html{
         width: 185px;
         height: 49px;
         line-height: 49px;
+        object-fit: cover;
       }
     }
   }
-
   &__main{
     &__itemProfile{
       background-color: $white;

@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @parents = Category.where(ancestry: nil)
   end
 
   def create
@@ -17,6 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
   end
