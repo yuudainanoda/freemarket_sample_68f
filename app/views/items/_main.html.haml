@@ -1,8 +1,3 @@
-
-
-
-
-
 .mainvisual
   .mainvisual__content
     .mainvisual__content__subtitle
@@ -15,9 +10,6 @@
       = link_to "" do
         = image_tag asset_path("Google-Play-Badge.png"), size: "180x53", class: "mainvisual__content__btn__gbtn"
     .mainvisual__content__pict
-  
-
-
 .introduction
   .introduction__subtitle
     FURIMAが選ばれる３つの理由
@@ -28,8 +20,6 @@
           1 
         .image  
           = image_tag asset_path("pict-reason-01.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
-          
-      
       .introduction__lists__tag__text
         .text__top 
           3分で
@@ -42,7 +32,6 @@
           2 
         .image  
           = image_tag asset_path("pict-reason-02.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
-          
       .introduction__lists__tag__pict
       .introduction__lists__tag__text
         .text__top
@@ -56,7 +45,6 @@
           3 
         .image  
           = image_tag asset_path("pict-reason-03.jpg"), size: "306x306", class: "introduction__lists__tag__pict"
-          
       .introduction__lists__tag__pict
       .introduction__lists__tag__text
         手数料
@@ -64,11 +52,6 @@
           業界最安
       .introduction__lists__tag__comment
         最大３%でお得に出品&購入
-
-
-
-      
-
 .mainvisual2
   .mainvisual__content
     .mainvisual__content__subtitle
@@ -81,8 +64,6 @@
       = link_to "#" do
         = image_tag asset_path("Google-Play-Badge.png"), size: "180x53", class: "mainvisual__content__btn__gbtn"
     .mainvisual__content__pict
-
-
 .midle
   .midle__subtitle
     FURIMAの特徴
@@ -90,7 +71,7 @@
     .midle__lists__tag
       .midle__lists__tag__src
         .image  
-          = image_tag asset_path("icon-01.png"), size: "306x306", class: "midle__lists__tag__pict"  
+          = image_tag asset_path("icon-01.png"), size: "306x306", class: "pict"  
       .midle__lists__tag__text   
         簡単に売り買いできる
       .midle__lists__tag__comment
@@ -98,30 +79,21 @@
     .midle__lists__tag
       .midle__lists__tag__src
         .image  
-          = image_tag asset_path("icon-03.png"), size: "306x306", class: "midle__lists__tag__pict"           
+          = image_tag asset_path("icon-03.png"), size: "306x306", class: "pict"           
       .midle__lists__tag__pict
       .midle__lists__tag__text
         売上金は即日振り込みに対応
       .midle__lists__tag__comment
         午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
-    
     .midle__lists__tag
       .midle__lists__tag__src 
         .image  
-          = image_tag asset_path("icon-04.png"), size: "306x306", class: "midle__lists__tag__pict"    
+          = image_tag asset_path("icon-04.png"), size: "306x306", class: "pict"    
       .midle__lists__tag__pict
       .midle__lists__tag__text
         様々な支払いに対応
       .midle__lists__tag__comment
         お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-
-
-
-
-
-
-
-
 .pickupcontainer
   .pickupcontainer__head
     ピックアップカテゴリー
@@ -139,6 +111,3 @@
           新規投稿商品
         .wrapper
           = render @items 
-   
-
- 

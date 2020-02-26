@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :users
   resources :items do
+
     member do
       get :order 
     end
     resources :messages, only:[:create, :new]
-
-
+    resources :orders, only:[:new, :create]
 
   end
 

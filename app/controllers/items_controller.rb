@@ -1,26 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.limit(3)
-    
-  end
-
-  def new
-    @item = Item.new
-    @user = User.new
-    
-  end
-
- 
-
-  def show
-    @item = Item.find(params[:id])
-    @image = @item.images.build
-    @message = Message.new
-    @order = Order.new
-    @orders = Order.find(params[:id])
-    @users = User.find(params[:id])
-   
+    @items = Item.all.limit(3).order(id: "DESC")
   end
 
 
@@ -35,13 +17,29 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @message = Message.new
+    @messages = @item.messages.order(id: "ASC").includes(:user)
+    @order = Order.new
+    @orders = Order.find(params[:id])
+    @users = User.find(params[:id])
+    
+  end
+
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_update_params)
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private

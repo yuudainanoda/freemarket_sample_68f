@@ -1,9 +1,8 @@
 .html
   .confirmation
     .confirmation__header
-      =link_to "#" , class: "confirmation__header__logo" do
+      =link_to root_path do
         =image_tag "logo.png",class: "confirmation__header__logo__image"
-
     .confirmation__main
       .confirmation__main__itemProfile
         .confirmation__main__itemProfile__top
@@ -11,10 +10,12 @@
         .confirmation__main__itemProfile__buy
           .confirmation__main__itemProfile__buy__inner
             .confirmation__main__itemProfile__buy__inner__photo
-              = image_tag src="sample.png" , class:"sample-img",size:"80x80"
+            -# 修正項目
+              -# = image_tag @item.images[0].image_url.url , class:"sample-img",size:"80x80"
             .confirmation__main__itemProfile__buy__inner__titleprice
               %p.confirmation__main__itemProfile__buy__inner__titleprice__title
-                サンプル
+              -# 修正項目
+                -# = @order.item.name
               %p.confirmation__main__itemProfile__buy__inner__titleprice__price
                 %span#id_value.class_zeikomi
                   ¥2,500
