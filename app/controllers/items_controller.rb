@@ -8,9 +8,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @parents = Category.where(ancestry: nil)
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params)
     @item.save
     redirect_to root_path
@@ -40,10 +42,10 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:condition,:deriver_charge,:area,:deriver_date,:category_id,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
   end
 
   def item_update_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image, :_destroy, :id]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:condition,:deriver_charge,:area,:deriver_date,:category_id,[images_attributes: [:image, :_destroy, :id]]).merge(user_id:current_user.id)
   end
 end
