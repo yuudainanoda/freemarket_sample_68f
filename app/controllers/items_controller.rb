@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
   end

@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    @item = Item.find(params[:item_id])
+    @user = User.find(@item.user_id)
   end
 
   def create
