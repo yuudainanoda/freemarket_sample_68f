@@ -118,15 +118,15 @@ html{
                     word-wrap: break-word;
                   }
                 }
+              }
                 .hidden-content {
                   .hidden-field {
-                    // display: none;
+                    display: none;
                   }
-                //   .hidden-checkbox {
-                //     display: none;
-                //   }
+                  .hidden-checkbox {
+                    display: none;
+                  }
                 }
-              }
             }
           }
         }

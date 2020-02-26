@@ -22,16 +22,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.save
   end
 
   def update
     @item.update(item_update_params)
     redirect_to root_path
     # root_pathの部分を、あとでマイページにとぶように再設定
-    resource.image.attach(item_update_params[:image])
-    resource_updated = update_resource(resource, item_update_params)
+    # resource.image.attach(item_update_params[:image])
+    # resource_updated = update_resource(resource, item_update_params)
 
   end
+
 
   def destroy
     @item.destroy
@@ -48,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def item_update_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image, :_destroy, :id]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
   end
 end

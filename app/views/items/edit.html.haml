@@ -23,7 +23,7 @@
                   -@item.images.each do |image|
                     .preview-box
                       .upper-box
-                        =image_tag "image.image.url",width:"112",height:"112"
+                        =image_tag image.image_url.url,width:"112",height:"112",alt: "preview"
                       .lower-box 
                         .update-box
                           %label.edit-btn 編集
@@ -31,24 +31,18 @@
                         .delete-box
                           .delete-btn
                             %span 削除
-                            -# =link_to "削除" ,class:"delete-btn"
+                            =link_to item_path ,class:"delete-btn",method: :delete
                 .label-content
                   = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
                   = f.fields_for :images do |i|
 
-                    = i.file_field :image, class: "hidden-field"
-                    = i.check_box:_destroy, class: "hidden-checkbox"
-                  - @item.images.length.upto(4) do |i|
-                    %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
-                  -# .hidden-content
-                  -#   = i.fields_for :images do |i|
-                  -#     = i.file_field :image_url, class: "hidden-field"
-                  -#   -#   = i.check_box:_destroy, class: "hidden-checkbox"
-                  -#   -# - @item.images.length.upto(4) do |i|
-                  -#     %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+                    = i.file_field :image_url, class: "hidden-field"
+                    = i.check_box :_destroy, class: "hidden-checkbox"
 
+                  - @item.images.length.upto(4) do |i| 
+                    %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
 
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name

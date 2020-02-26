@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :messages, only:[:new, :create]
-    resources :orders, only:[:new, :create]
+    resources :orders, only:[:new, :create, :edit ,:update ,:destroy]
   end
 end
  
