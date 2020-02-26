@@ -42,7 +42,7 @@
 
     .mypage-tab-container-notification-todo{
       margin: 0;
-      background: $white;
+      background: #fff;
       padding: 0;
       .mypage-tabs{
         list-style: none;
@@ -62,29 +62,119 @@
           width: 50%;
         }
       }
+      
       .tab-content{
         li{
           list-style: none;
+          
+          .onlylogo{
+            position: relative;
+            overflow: hidden;
+            float: left;
+            width: 48px;
+            height: 48px;
+            background-color: whitesmoke;
+          }
+          .time{
+            color: #888888;
+          }
         }
+      }
         .mypage-item-link{
           display: block;
           min-height: 80px;
           padding: 16px;
           color: #333;
           list-style: none;
+          border-bottom: 1px solid #eee;
+        }
+
+        .mypage-go-list{
+          padding:16px;
+          .list{
+            display: block;
+            height: 56px;
+            margin: 0 auto;
+            background: #eee;
+            color: #333;
+            line-height: 56px;
+            text-align: center;
+          }
+       }
+    }
+    .mypage-tab-container{
+      margin: 40px 0 0;
+      background: #fff;
+      .mypage-tab-head{
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+        font-weight: 600;
+        padding: 0 16px;
+      }
+      .mypage-tabs{
+        list-style: none;
+        border: 0;
+        background: #eee;
+        font-size: 0;
+        display: flex;
+        font-weight: 600;
+        .active{
+          // width: 50%;
+          // display: inline-block;
+          text-align: center;
+          position: relative;
+          // display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          width: 50%;
+          font-weight: 600;
+        }
+      }
+      .tab-content{
+        .mypage-item-not-found{
+          padding: 160px 0 60px;
+          background-image: asset-url("onlylogo.png");
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+          font-weight: 600;
         }
       }
     }
   }
+
+
   .l-side{
     float: right;
-    
+    width: 280px;
+    margin: 0 40px 0 0;
     .mypage-nav{
       .mypage-nav-list{
+        .mypage-nav-list-item-active{
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          border-bottom: 1px solid #eee;
+        .arrow{
+          position: absolute;
+          top:50%;
+          right: 16px;
+
+        }
+        }
       }
-      .mypage-nav-head{
+      .mypage-tav-head{
 
       }  
     }
-  }  
+  } 
 }
