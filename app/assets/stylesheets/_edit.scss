@@ -10,7 +10,6 @@ html{
   &__header{
     margin: 40px 0 0;
     height: 128px;
-    
     text-align: center;
     &__logo{
       &__image{
@@ -25,42 +24,35 @@ html{
       background-color: #fff;
       width: 700px;
       margin: 0 auto;
-
       &__inputForm{
-
         &__top{
           padding: 32px 16px;
           font-size: 22px;
           font-weight: bold;
           text-align: center;
         }
-
         &__sellImage{
           border-top: 1px solid #eee;
-
           &__upload{
             width: 620px;
             padding: 40px;
-
             &__head{
               font-weight: bold;
               display: flex;
             }
-
             &__attention{
               margin: 8px 0 0;
               line-height: 1.5;
             }
-
             &__image10{
               display: block;
               margin: 16px auto 0;
               display: flex;
               flex-wrap: wrap;
-
-              .prev-content {
+              .prev-content{
+                float: left;
                 display: flex;
-                .preview-box {
+                .preview-box{
                   height: 162px;
                   width: 112px;
                   margin: 0 15px 10px 0;
@@ -75,6 +67,7 @@ html{
                   .lower-box {
                     display: flex;
                     text-align: center;
+                  }
                     .update-box {
                       color: #00b0ff;
                       width: 50%;
@@ -93,14 +86,14 @@ html{
                       background: #f5f5f5;
                       cursor: pointer;
                     }
-                  }
+                  
                 }
               }
-            
               //投稿クリックエリアのCSS
               .label-content{
                 margin-bottom: 10px;
                 width: 620px;
+                float: right;
                 .label-box {
                   display: block;
                   border: 1px dashed #ccc;
@@ -125,29 +118,25 @@ html{
                     word-wrap: break-word;
                   }
                 }
-              }
-            
-              .hidden-content {
-                .hidden-field {
-                  // display: none;
-                }
-                .hidden-checkbox {
-                  display: none;
+                .hidden-content {
+                  .hidden-field {
+                    // display: none;
+                  }
+                //   .hidden-checkbox {
+                //     display: none;
+                //   }
                 }
               }
             }
           }
         }
-
         &__sellGoods{
           padding: 40px;
           border-top: 1px solid #eee;
-
           &__name{
             font-weight: bold;
             display: flex;
           }
-
           &__input{
             width: 100%;
             margin: 8px 0 0;
@@ -159,7 +148,6 @@ html{
             line-height: 1.5;
             font-size: 16px;
           }
-
           &__description{
             margin: 40px 0 0;
             font-weight: bold;
@@ -169,13 +157,11 @@ html{
             text-align: right;
           }
         }
-
         &__sellDetails{
           padding: 40px;
           border-top: 1px solid #eee;
           display: flex;
           justify-content: space-between;
-
           &__title{
             color: #888;
             font-weight: bold;
@@ -184,13 +170,10 @@ html{
           &__formBox{
             width: 400px;
             margin: 0;
-
             &__category{
               &__select{
                 font-weight: bold;
                 display: flex;
-
-
               }
               select{
                 width: 100%;
@@ -231,13 +214,11 @@ html{
             }
           }
         }
-
         &__delivery{
           padding: 40px;
           border-top: 1px solid #eee;
           display: flex;
           justify-content: space-between;
-
           &__leftBox{
             &__title{
               color: #888;
@@ -260,7 +241,6 @@ html{
                 font-weight: bold;
                 display: flex;
               }
-
             }
             &__days{
               &__select{
@@ -271,13 +251,11 @@ html{
             }
           }
         }
-
         &__sellPrice{
           padding: 40px;
           border-top: 1px solid #eee;
           display: flex;
           justify-content: space-between;
-
           &__leftBox{
             &__title{
               color: #888;
@@ -294,7 +272,6 @@ html{
                 font-weight: bold;
                 display: flex;
               }
-
             }
             &__commission{
               padding: 24px 0;
@@ -312,9 +289,7 @@ html{
               &__title{
               }
               &__count{
-
               }
-            
             }
           }
         }
@@ -324,13 +299,11 @@ html{
           &__links{
             &__link{
               text-decoration: none;
-
             }
           }
         }
       }
     }
-
   //「必須」の表記
     .formRequire{
       background: #ea352d;
@@ -341,7 +314,6 @@ html{
       font-size: 12px;
       vertical-align: top;
     }
-
   //「任意」の表記
     .formAny{
       background: #bfbfbf;
@@ -352,7 +324,6 @@ html{
       font-size: 12px;
       vertical-align: top;
     }
-
     //入力部分
     .exhibitInput{
       width: 100%;
@@ -365,7 +336,6 @@ html{
       line-height: 1.5;
       font-size: 16px;
     }
-
     .exhibitTextarea{
       width: 100%;
       margin: 8px 0 0;
@@ -377,7 +347,6 @@ html{
       line-height: 1.5;
       font-size: 16px;
     }
-
     .exhibitSubmit1{
       display: block;
       margin: 40px auto 0;
@@ -409,10 +378,8 @@ html{
   &__footer{
     text-align: center;
     padding: 40px 0px 41px;
-    
     &__lists{
       margin: -16px 0px 40px -16px;
-
       &__list{
         margin: 16px 0px 0px 16px;
         font-size: 12px;
@@ -423,7 +390,6 @@ html{
       width: 80px;
       height: 65px;
       margin: 40px auto 0;
-
       &__image{
         width: 185px;
         height: 49px;
@@ -432,12 +398,6 @@ html{
     &__ending{
       font-size: 13px;
       text-align: center;
-
     }
   }
-}
-
-a{
-  text-decoration: none;
-  color: #0099e8;
 }
