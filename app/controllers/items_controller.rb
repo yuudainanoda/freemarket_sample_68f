@@ -2,10 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-  
     @items = Item.all.limit(3).order(id: "DESC")
   end
-
 
   def new
     @item = Item.new
@@ -28,10 +26,7 @@ class ItemsController < ApplicationController
     @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
-    # @order = Order.new
-    # @orders = Order.find(params[:id])
-    @users = User.find(params[:id])
-    
+    @users = User.find(params[:id]) 
   end
 
   def edit

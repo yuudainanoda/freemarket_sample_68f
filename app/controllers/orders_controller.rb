@@ -4,12 +4,10 @@ class OrdersController < ApplicationController
   require 'payjp'
 
   def index
-    card = Card.where(user_id: current_user.id).first
-   
+    card = Card.where(user_id: current_user.id).first 
   end
 
-  def done
-    
+  def done  
   end
 
   def new
@@ -24,7 +22,7 @@ class OrdersController < ApplicationController
 
   def pay
     @item = Item.find(params[:item_id])
-    # @item.update(order_id: current_user.id)
+    # @item.update(order_id: current_user.id) 
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -38,13 +36,9 @@ class OrdersController < ApplicationController
     redirect_to item_orders_path
   end
 
-
-
   private
   def set_item
     @item = Item.find(params[:item_id])
   end
-
- 
 
 end

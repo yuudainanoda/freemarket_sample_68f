@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :users
   resources :items do
 
-
     member do
       get :order 
     end
@@ -20,16 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :cards 
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
-
   end
-
-
 end
  
