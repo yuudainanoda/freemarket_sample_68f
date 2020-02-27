@@ -16,8 +16,6 @@
           ブランド
         =link_to "" , class:"header__box__navi__left__secondzone" do
           裏ルート
-        
-
       .header__box__navi__right
         - if user_signed_in?
           = link_to user_path(current_user), class: "header__box__navi__right__new" do

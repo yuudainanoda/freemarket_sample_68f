@@ -3,12 +3,7 @@ class OrdersController < ApplicationController
 
   require 'payjp'
 
-  def index
-    card = Card.where(user_id: current_user.id).first 
-  end
-
-  def done  
-  end
+  
 
   def new
     @item = Item.find(params[:item_id])
