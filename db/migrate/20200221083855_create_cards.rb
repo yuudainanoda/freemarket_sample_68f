@@ -8,8 +8,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.integer :cvc
       t.string :customer_id
       
-
-
       t.timestamps
     end
   end

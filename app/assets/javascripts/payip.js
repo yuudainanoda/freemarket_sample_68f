@@ -10,26 +10,7 @@ document.addEventListener(
           cvc: document.getElementById("cvc").value,
           exp_month: document.getElementById("exp_month").value,
           exp_year: document.getElementById("exp_year").value
-        }; //入力されたデータを取得します。
-        // Payjp.createToken(card, function(s, response) {
-        //   if (response.error) {
-        //     form.find('.payment-errors').text(response.error.message);
-        //     form.find('button').prop('disabled', false);
-        //   }
-        //   else {
-        //     $(".number").removeAttr("name");
-        //     $(".cvc").removeAttr("name");
-        //     $(".exp_month").removeAttr("name");
-        //     $(".exp_year").removeAttr("name");
-    
-        //     var token = response.id;
-    
-        //     form.append($('<input type="hidden" name="payjpToken" />').val(token));
-        //     form.get(0).submit();
-        //   }
-        // });
-
-        
+        }; //入力されたデータを取得します。 
 
         Payjp.createToken(card, (status, response) => {
           
