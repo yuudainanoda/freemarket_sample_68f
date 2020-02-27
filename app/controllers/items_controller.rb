@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
+  
     @items = Item.all.limit(3).order(id: "DESC")
   end
 
@@ -16,7 +17,7 @@ class ItemsController < ApplicationController
      
      @item = Item.new(item_params)
      if @item.save
-     redirect_to root_path
+      redirect_to root_path
      else
       render "new"
      end

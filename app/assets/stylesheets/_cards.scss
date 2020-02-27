@@ -1,9 +1,9 @@
 
 
 
-label {
+label1 {
   display: table-row;
-  line-height: 50px;
+  line-height: 40px;
 }
 
 .number {
@@ -20,8 +20,17 @@ label {
   font-size: 20px;
   border-radius: 25px;
   width: 150px;
+  color: white;
    
   background-color: darkseagreen;
 
 
+}
+.card_color {
+  display: inline;
+  background-color: darkturquoise;
+  border-radius: 25px;
+  font-size: 15px;
+  color: whitesmoke;
+  margin-right: 10px;
 }
