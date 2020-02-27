@@ -26,26 +26,19 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # binding.pry
+    
     @parents = Category.where(ancestry: nil)
-    @item.save
-
+    # @item.save
   end
 
   def update
-    # binding.pry
-    # if @item.save
-    #   redirect_to item_path
-    # else
-    #   redirect_to item_path
-    # end
+    @parents = Category.where(ancestry: nil)
+   if @item.update(item_update_params)
+      redirect_to root_path
+    else 
+      render "edit"
+    end
    
-    @item.update(item_update_params)
-    redirect_to root_path
-    # root_pathの部分を、あとでマイページにとぶように再設定
-    # resource.image.attach(item_update_params[:image])
-    # resource_updated = update_resource(resource, item_update_params)
-
   end
 
 
