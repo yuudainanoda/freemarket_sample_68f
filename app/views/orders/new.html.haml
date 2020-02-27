@@ -70,7 +70,6 @@
                 = @user.nickname
           %section.buy-content
             %p.buy-content__message
-            -# = form_with url: pay_item_orders_path,model: [@item,@order] ,html: { name: "inputForm"} ,local:true do |f|
             = link_to pay_item_orders_path, method: :POST do
               %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
               %p.app
