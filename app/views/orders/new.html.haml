@@ -1,3 +1,54 @@
+
+
+
+
+
+
+
+
+
+
+-# %h2 購入を確定しますか？
+-# %p Apple MacBook Pro 13インチ
+-# %p ¥135,000(送料込み)
+-# %br
+-# %h3 支払い方法
+-# - if @default_card_information.blank?
+-#   %br /
+-# - else
+-#   -#以下カード情報を表示
+-#   = "**** **** **** " + @default_card_information.last4
+-#   - exp_month = @default_card_information.exp_month.to_s
+-#   - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+-#   = exp_month + " / " + exp_year
+-# %br
+-# -# = form_tag(action: :pay, method: :post) do
+-# = form_with url: pay_item_orders_path,method: :post ,html: { name: "inputForm"} ,local:true do 
+-#   %button 購入する
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .html
   .confirmation
     .confirmation__header
@@ -34,6 +85,8 @@
               .cresit-card__box__clearfix
                 %h3.osiharai
                   支払い方法
+                  - if @default_card_information.blank?
+                  - else
                 .change
                   = link_to "#" ,class:"change-p" do 
                     変更する
@@ -67,8 +120,10 @@
                 = @user.nickname
           %section.buy-content
             %p.buy-content__message
-            %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
-            %p.app
+            -# = form_with url: pay_item_orders_path,model: [@item,@order] ,html: { name: "inputForm"} ,local:true do |f|
+            = link_to pay_item_orders_path, method: :POST do
+              %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
+              %p.app
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
             .app-introduce
               = link_to "" do    

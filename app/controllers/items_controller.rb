@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
     @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
-    @order = Order.new
-    @orders = Order.find(params[:id])
+    # @order = Order.new
+    # @orders = Order.find(params[:id])
     @users = User.find(params[:id])
     
   end

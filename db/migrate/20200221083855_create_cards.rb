@@ -6,6 +6,9 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :card_id
       t.integer :number
       t.integer :cvc
+      t.string :customer_id
+      
+
 
       t.timestamps
     end
