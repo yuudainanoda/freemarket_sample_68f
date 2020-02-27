@@ -14,8 +14,11 @@ class ItemsController < ApplicationController
   def create
      
      @item = Item.new(item_params)
-     @item.save
+     if @item.save
      redirect_to root_path
+     else
+      render "new"
+     end
   end
 
   def show
@@ -26,9 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
     @parents = Category.where(ancestry: nil)
-    # @item.save
   end
 
   def update
