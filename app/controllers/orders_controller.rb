@@ -33,7 +33,6 @@ class OrdersController < ApplicationController
     :currency => 'jpy', #日本円
     
   )
-  
     @order = Order.new(item_id: params[:item_id], user_id: current_user.id)   
     @order.save
     redirect_to item_orders_path

@@ -181,3 +181,11 @@
 
   } 
 }
+
+
+%label {
+  font-size: 30px;
+  .number {
+    background-color: red($color: #000000);
+  }
+}
