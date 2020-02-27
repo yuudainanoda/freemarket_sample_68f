@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function(){
     if (window.location.href.match(/\/items\/\d+\/edit/)){
       //登録済み画像のプレビュー表示欄の要素を取得する
       var prevContent = $('.label-content').prev();
-      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-4]/g, ''));
       $('.label-content').css('width', labelWidth);
       //プレビューにidを追加
       $('.preview-box').each(function(index, box){
@@ -46,7 +46,7 @@ $(document).on('turbolinks:load', function(){
     function setLabel() {
       //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
       var prevContent = $('.label-content').prev();
-      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-4]/g, ''));
       $('.label-content').css('width', labelWidth);
     }
 
@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function(){
     $(document).on('change', '.hidden-field', function() {
       setLabel();
       //hidden-fieldのidの数値のみ取得
-      var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      var id = $(this).attr('id').replace(/[^0-4]/g, '');
       //labelボックスのidとforを更新
       $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
       //選択したfileのオブジェクトを取得
@@ -100,7 +100,7 @@ $(document).on('turbolinks:load', function(){
     $(document).on('click', '.delete-box', function() {
       var count = $('.preview-box').length;
       setLabel(count);
-      var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      var id = $(this).attr('id').replace(/[^0-4]/g, '');
       $(`#preview-box__${id}`).remove();
 
       //新規登録時と編集時の場合分け==========================================================
