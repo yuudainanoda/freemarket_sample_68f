@@ -1,8 +1,172 @@
-.home
-  = link_to new_card_path do
-    次
 
 
+.l-container.clearfix
+  .l-content
+    .mypage-user-icon
+      =link_to "#" , class:"mypage-user-midle" do
+        .figure
+          = image_tag "member_photo_noimage_thumb.png", size: "60x60"
+        .name
+          オオハシ
+        .mypage-number
+          評価0  出品0
+    .mypage-tab-container-notification-todo
+      %ul
+        .mypage-tabs
+          %li
+          =link_to "#" , class:"active" do
+            お知らせ
+          %li
+          =link_to "#" , class:"active" do
+            やることリスト
+      .tab-content
+        %li
+          =link_to "#" , class:"mypage-item-link" do
+            = image_tag "onlylogo.png",class:"onlylogo"
+            《あと5日》”最大1,000円分”のお得なポイントをGETしよう！キャンペーン詳細はこちら！
+            .time
+              = icon("fas fa-clock", class: "contents__btn--icon")
+              1時間前
+        %li
+          =link_to "#" , class:"mypage-item-link" do
+            = image_tag "onlylogo.png",class:"onlylogo"
+            《ご登録記念》「200円分のクーポン(ポイントバック)」を付与しました！
+            .time
+              = icon("fas fa-clock", class: "contents__btn--icon")
+              1日前
+        %li
+          =link_to "#" , class:"mypage-item-link" do
+            = image_tag "onlylogo.png",class:"onlylogo"
+            事務局から個別メッセージ「Googleログイン通知」
+            .time
+              = icon("fas fa-clock", class: "contents__btn--icon")
+              1日前
+        %li
+          =link_to "#" , class:"mypage-item-link" do
+            = image_tag "onlylogo.png",class:"onlylogo"
+            明日、P200還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+            .time
+              = icon("fas fa-clock", class: "contents__btn--icon")
+              2日前
+        %li
+          =link_to "#" , class:"mypage-item-link" do
+            = image_tag "onlylogo.png",class:"onlylogo"
+            《15秒！かんたん出品するだけ》最大1,000円分のポイントがもらえるチャンス！
+            .time
+              = icon("fas fa-clock", class: "contents__btn--icon")
+              ３日前
+        %li
+      .mypage-go-list
+        =link_to "#" , class:"list" do
+          一覧を見る
+    .mypage-tab-container
+      .mypage-tab-head
+        購入した商品
+      %ul
+        .mypage-tabs
+          %li
+          =link_to "#" , class:"active" do
+            取引中
+          %li
+          =link_to "#" , class:"active" do
+            過去の取引
+      .tab-content
+        .mypage-item-not-found
+          取引中の商品がありません
 
+  .l-side  
+    .mypage-nav
+      .mypage-nav-list
+        %ul
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            マイページ
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            お知らせ
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            やることリスト
+            %i.fas.fa-arrow-right
+          %li  
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            いいね一覧
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            出品する
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            出品した商品・出品中
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            出品した商品・取引中
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            出品した商品・売約済み
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            購入した商品・取引中
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            出品した商品・過去の取引
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            ニュース一覧
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            評価一覧
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            ガイド
+            %i.fas.fa-arrow-right
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            お問い合わせ
+            %i.fas.fa-arrow-right
+      .mypage-nav-head
+        メルペイ
+      .mypage-nav-list
+        %ul
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            売り上げ・振込申請
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            ポイント
+      .mypage-nav-head
+        設定
+      .mypage-nav-list    
+        %ul
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            プロフィール
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            発送元・お届け先住所変更
+          %li
+          =link_to new_card_path , class:"mypage-nav-list-item-active" do
+            支払い方法
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            メール/パスワード
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            本人情報
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            電話番号の確認
+          %li
+          =link_to "#" , class:"mypage-nav-list-item-active" do
+            ログアウト
 
-  

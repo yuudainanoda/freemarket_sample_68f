@@ -6,17 +6,17 @@ Rails.application.routes.draw do
   resources :users
   resources :items do
 
+
     member do
       get :order 
     end
     resources :messages, only:[:create, :new]
-    resources :orders, only:[:new, :create, :index] do
+    resources :orders, only:[:new, :create, :edit ,:update ,:destroy]
       collection do
         get 'index', to: 'orders#index'
         post 'pay', to: 'orders#pay'
         get 'done', to: 'orders#done'
       end
-    end
   end
 
   # resources :cards 
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
+
   end
 
 

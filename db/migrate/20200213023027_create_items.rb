@@ -6,7 +6,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer	:price,	null:false
       t.text	:description,	null:false
       t.string  :brand
-      t.string  :category,	null:false
       t.string  :condition,	null:false
       t.string  :deriver_charge,	null:false
       t.string  :area,	null:false
@@ -21,8 +20,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       # order_status_id	reference	foreign_key:true
       t.string :name
       t.integer :price
-     
-    
+
       t.timestamps
     end
   end

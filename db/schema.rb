@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2020_02_26_115740) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_url"
     t.bigint "item_id"
@@ -36,13 +42,13 @@ ActiveRecord::Schema.define(version: 2020_02_26_115740) do
     t.integer "price"
     t.text "description", null: false
     t.string "brand"
-    t.string "category", null: false
     t.string "condition", null: false
     t.string "deriver_charge", null: false
     t.string "area", null: false
     t.string "deriver_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
     t.bigint "user_id"
     t.bigint "order_id"
     t.index ["order_id"], name: "index_items_on_order_id"
