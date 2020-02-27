@@ -12,24 +12,36 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to root_path
+     
+     @item = Item.new(item_params)
+     if @item.save
+     redirect_to root_path
+     else
+      render "new"
+     end
   end
 
   def show
+    @category = Category.find(@item.category_id)
     @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
   end
 
   def edit
+    @parents = Category.where(ancestry: nil)
   end
 
   def update
     @item.update(item_update_params)
-
+    @parents = Category.where(ancestry: nil)
+   if @item.update(item_update_params)
+      redirect_to root_path
+    else 
+      render "edit"
+    end
   end
+
 
   def destroy
     @item.destroy
