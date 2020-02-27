@@ -16,8 +16,6 @@ class Item < ApplicationRecord
   # belongs_to :delivery_date
   # belongs_to :order_status
   # belongs_to :size
-
-
   validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true

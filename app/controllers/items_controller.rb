@@ -12,22 +12,34 @@ class ItemsController < ApplicationController
   end
 
   def create
+     
      @item = Item.new(item_params)
      @item.save
      redirect_to root_path
   end
 
   def show
+    @category = Category.find(@item.category_id)
     @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
   end
 
   def edit
+    # binding.pry
+    @parents = Category.where(ancestry: nil)
     @item.save
+
   end
 
   def update
+    # binding.pry
+    # if @item.save
+    #   redirect_to item_path
+    # else
+    #   redirect_to item_path
+    # end
+   
     @item.update(item_update_params)
     redirect_to root_path
     # root_pathの部分を、あとでマイページにとぶように再設定
@@ -48,10 +60,10 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:price,:description,:image,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:image,:brand,:category_id,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
   end
 
   def item_update_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
   end
 end

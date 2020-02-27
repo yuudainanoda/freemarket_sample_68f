@@ -36,7 +36,7 @@
                   = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
-                  = f.fields_for :images do |i|
+                  = f.fields_for :images_url do |i|
 
                     = i.file_field :image_url, class: "hidden-field"
                     = i.check_box :_destroy, class: "hidden-checkbox"
@@ -71,7 +71,7 @@
                     カテゴリー
                   .formRequire
                     必須
-                =f.text_field :category, class: "exhibitInput", placeholder: "例）レディース、メンズ"
+                = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_id]'
               .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand
                 .exhibit__main__itemProfile__inputForm__sellDetails__formBox__brand__write
                   .notation
