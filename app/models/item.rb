@@ -18,13 +18,7 @@ class Item < ApplicationRecord
   # belongs_to :size
 
 
-  validates :name, presence: true
-  validates :price, presence: true
-  validates :description, presence: true
-  validates :condition, presence: true
-  validates :deriver_charge, presence: true
-  validates :area, presence: true
-  validates :deriver_date, presence: true
+  validates :name,:price,:description,:condition,:deriver_charge,:area,:deriver_date,:category_id, presence: true
 
   def previous
     user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
