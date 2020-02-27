@@ -27,7 +27,7 @@
             カテゴリー
           .top__content__box__table__line__right
             = link_to "#" , class: "category-link" do
-              = @category.name
+              = @item.category.name
         .top__content__box__table__line
           .top__content__box__table__line__left
             ブランド
@@ -42,23 +42,23 @@
           .top__content__box__table__line__left
             商品の状態
           .top__content__box__table__line__right
-            = @item.condition
+            = @item.condition.name
         .top__content__box__table__line
           .top__content__box__table__line__left
             発送量の負担
           .top__content__box__table__line__right
-            = @item.deriver_charge
+            = @item.deriver_charge.name
         .top__content__box__table__line
           .top__content__box__table__line__left
             発送元の地域
           .top__content__box__table__line__right
             = link_to "#" , class: "top__content__box__table__line__right__first" do
-              = @item.area
+              = @item.prefecture.name
         .top__content__box__table__line
           .top__content__box__table__line__left
             発送日の目安
           .top__content__box__table__line__right
-            = @item.deriver_date
+            = @item.deriver_date.name
       .top__content__box__option
         .top__content__box__option__like
           ★ お気に入り0
