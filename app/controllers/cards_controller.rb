@@ -1,11 +1,9 @@
 class CardsController < ApplicationController
   require "payjp"
 
-  
-
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    @set_card = Card.where(user_id: current_user.id)
+    redirect_to action: "up" if @set_card.exists?
   end
 
   def pay
@@ -19,7 +17,7 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, order_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action:"show"
+        redirect_to action:"up"
       else
         redirect_to action:"pay"
       end
@@ -38,8 +36,14 @@ class CardsController < ApplicationController
     end
       redirect_to action: "new"
   end
-
   def show
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    order = Payjp::Customer.retrieve(card.order_id)
+    @default_card_information = order.cards.retrieve(card.card_id)
+  end
+
+  def up
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"

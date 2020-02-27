@@ -11,10 +11,6 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  def create
-  end
-
-
   def pay
     @item = Item.find(params[:item_id])
     # @item.update(order_id: current_user.id) 

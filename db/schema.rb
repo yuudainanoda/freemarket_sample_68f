@@ -41,18 +41,12 @@ ActiveRecord::Schema.define(version: 2020_02_26_115740) do
     t.string "name"
     t.integer "price"
     t.string "brand"
-    t.string "condition", null: false
-    t.string "deriver_charge", null: false
-    t.string "area", null: false
-    t.string "deriver_date", null: false
-
     t.text "description", null: false
     t.integer "condition_id", null: false
     t.integer "deriver_charge_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "deriver_date_id", null: false
     t.integer "soldout_or_exhibiting_id", default: 1
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"

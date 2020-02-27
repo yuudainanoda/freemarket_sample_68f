@@ -10,9 +10,8 @@ Rails.application.routes.draw do
       get :order 
     end
     resources :messages, only:[:create, :new]
-    resources :orders, only:[:new, :create, :edit ,:update ,:destroy] do
+    resources :orders, only:[:new, :create, :edit ,:update ,:destroy,] do
       collection do
-        get 'index', to: 'orders#index'
         post 'pay', to: 'orders#pay'
         get 'done', to: 'orders#done'
       end
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'cards#show'
+      post 'up', to: 'cards#up'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
