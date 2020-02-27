@@ -5,6 +5,12 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_one :order
+  extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :condition
+    belongs_to_active_hash :deriver_charge
+    belongs_to_active_hash :prefecture
+    belongs_to_active_hash :deriver_date
+    belongs_to_active_hash :soldout_or_exhibiting
   # has_many :likes
   # has_many :message_users,through::messages,source::user
   # has_many :like_users,through::likes,source::user
@@ -16,13 +22,8 @@ class Item < ApplicationRecord
   # belongs_to :delivery_date
   # belongs_to :order_status
   # belongs_to :size
-  validates :name, presence: true
-  validates :price, presence: true
-  validates :description, presence: true
-  validates :condition, presence: true
-  validates :deriver_charge, presence: true
-  validates :area, presence: true
-  validates :deriver_date, presence: true
+
+  validates :name,:price,:description,:deriver_charge,:deriver_date,:category_id,:condition_id,:prefecture_id, presence: true
 
   def previous
     user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
@@ -31,4 +32,5 @@ class Item < ApplicationRecord
   def next
     user.items.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
   end
+
 end

@@ -40,12 +40,19 @@ ActiveRecord::Schema.define(version: 2020_02_26_115740) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "price"
-    t.text "description", null: false
     t.string "brand"
     t.string "condition", null: false
     t.string "deriver_charge", null: false
     t.string "area", null: false
     t.string "deriver_date", null: false
+
+    t.text "description", null: false
+    t.integer "condition_id", null: false
+    t.integer "deriver_charge_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "deriver_date_id", null: false
+    t.integer "soldout_or_exhibiting_id", default: 1
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
@@ -75,12 +82,12 @@ ActiveRecord::Schema.define(version: 2020_02_26_115740) do
     t.string "first_name_kana", null: false
     t.string "last_name", null: false
     t.string "last_name_kana", null: false
-    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "building"
     t.integer "zipcode", null: false
     t.integer "telephone"
+    t.integer "prefecture_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

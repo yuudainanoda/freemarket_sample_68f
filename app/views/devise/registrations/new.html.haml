@@ -104,7 +104,7 @@
               %span.require 必須
               %br/
               .prefecture-select
-                = i.select :prefecture, [*("北海道")], prompt:"--", class: "input-area"
+                = i.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input-area'
             .field
               = i.label :市区町村
               %span.require 必須

@@ -39,13 +39,13 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item.update(item_update_params)
     @parents = Category.where(ancestry: nil)
    if @item.update(item_update_params)
       redirect_to root_path
     else 
       render "edit"
     end
-   
   end
 
 
@@ -60,11 +60,11 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:price,:description,:image,:brand,:category_id,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition_id,:deriver_charge_id,:prefecture_id,:deriver_date_id,[images_attributes: [:image_url]]).merge(user_id:current_user.id)
   end
 
   def item_update_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition,:deriver_charge,:area,:deriver_date,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition_id,:deriver_charge_id,:prefecture_id,:deriver_date_id,[images_attributes: [:image, :_destroy, :id]]).merge(user_id:current_user.id)
   end
 
 end
