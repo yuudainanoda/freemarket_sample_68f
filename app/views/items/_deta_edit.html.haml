@@ -89,8 +89,8 @@
                                                                         cancel: "キャンセル",
                                                                         commit: "削除" }
     .top__content__bye
-      - if user_signed_in?
-        - unless current_user.id == @item.user_id
+      - if user_signed_in?  
+        - unless current_user.id == @item.user_id || @item.order.present?          
           = link_to new_item_order_path(@item), method: :get do
             .bye-btn
               商品を購入する

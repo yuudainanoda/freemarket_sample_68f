@@ -21,7 +21,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       # order_status_id	reference	foreign_key:true
       t.string :name
       t.integer :price
-      t.integer :order_id
+      
       t.timestamps
     end
   end

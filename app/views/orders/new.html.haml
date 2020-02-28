@@ -1,3 +1,4 @@
+
 .html
   .confirmation
     .confirmation__header
@@ -34,6 +35,8 @@
               .cresit-card__box__clearfix
                 %h3.osiharai
                   支払い方法
+                  - if @default_card_information.blank?
+                  - else
                 .change
                   = link_to "#" ,class:"change-p" do 
                     変更する
@@ -67,8 +70,9 @@
                 = @user.nickname
           %section.buy-content
             %p.buy-content__message
-            %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
-            %p.app
+            = link_to pay_item_orders_path, method: :POST do
+              %button{ onclick: "#", type:  "“button”",class:"red-btn"}購入する
+              %p.app
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
             .app-introduce
               = link_to "" do    
