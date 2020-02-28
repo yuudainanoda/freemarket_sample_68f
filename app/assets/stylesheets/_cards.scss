@@ -1,0 +1,28 @@
+
+label1 {
+  display: table-row;
+  line-height: 40px;
+}
+.number {
+  font-size: 20px;
+}
+.cvc {
+  font-size: 15px;
+  width: 250px;
+}
+.card_up {
+  margin: 10px 0;
+  font-size: 20px;
+  border-radius: 25px;
+  width: 150px;
+  color: white;  
+  background-color: darkseagreen;
+}
+.card_color {
+  display: inline;
+  background-color: darkturquoise;
+  border-radius: 25px;
+  font-size: 15px;
+  color: whitesmoke;
+  margin-right: 10px;
+}
