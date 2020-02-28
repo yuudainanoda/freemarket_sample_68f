@@ -165,5 +165,5 @@
           =link_to "#" , class:"mypage-nav-list-item-active" do
             電話番号の確認
           %li
-          =link_to "#" , class:"mypage-nav-list-item-active" do
+          =link_to destroy_user_session_path, method: :delete, class:"mypage-nav-list-item-active" do
             ログアウト
