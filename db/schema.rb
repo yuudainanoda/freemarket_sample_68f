@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_052140) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.string "category_id"
+    t.integer "category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
