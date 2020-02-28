@@ -83,7 +83,11 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'pry-byebug'
+gem 'payjp'
+
+gem 'dotenv-rails'
 gem 'seed-fu'
 gem 'active_hash'
 gem 'ancestry'
+
 

@@ -1,3 +1,5 @@
+
+
 .l-container.clearfix
   .l-content
     .mypage-user-icon
@@ -153,7 +155,7 @@
           =link_to "#" , class:"mypage-nav-list-item-active" do
             発送元・お届け先住所変更
           %li
-          =link_to "#" , class:"mypage-nav-list-item-active" do
+          =link_to new_card_path , class:"mypage-nav-list-item-active" do
             支払い方法
           %li
           =link_to "#" , class:"mypage-nav-list-item-active" do
@@ -165,5 +167,7 @@
           =link_to "#" , class:"mypage-nav-list-item-active" do
             電話番号の確認
           %li
-          =link_to "#" , class:"mypage-nav-list-item-active" do
+
+          =link_to destroy_user_session_path, method: :delete, class:"mypage-nav-list-item-active" do
             ログアウト
+
