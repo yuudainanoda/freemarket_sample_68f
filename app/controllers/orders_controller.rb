@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   )
     @order = Order.new(item_id: params[:item_id], user_id: current_user.id)   
     @order.save
-    redirect_to item_orders_path
+    redirect_to root_path
   end
 
   private

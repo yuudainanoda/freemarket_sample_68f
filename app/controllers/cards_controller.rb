@@ -1,13 +1,13 @@
 class CardsController < ApplicationController
+  before_action  :set_card, only: [:new, :pay, :delete, :show, :up]
+  
   require "payjp"
 
   def new
-    @set_card = Card.where(user_id: current_user.id)
-    redirect_to action: "up" if @set_card.exists?
+    @card = Card.new
   end
 
   def pay
-   
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -15,8 +15,8 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.create(
         card: params['payjp-token']
       )
-      @card = Card.new(user_id: current_user.id, order_id: customer.id, card_id: customer.default_card)
-      if @card.save
+      card = Card.new(user_id: current_user.id, order_id: customer.id, card_id: customer.default_card)
+      if card.save
         redirect_to action:"up"
       else
         redirect_to action:"pay"
@@ -26,25 +26,23 @@ class CardsController < ApplicationController
 
 
   def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.order_id)
+    if Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@card.order_id)
       customer.delete
-      card.delete
-    end
+      @card.delete
+      redirect_to root_path
+    else 
+      @card.blank?
       redirect_to action: "new"
+    end
   end
   def show
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    order = Payjp::Customer.retrieve(card.order_id)
-    @default_card_information = order.cards.retrieve(card.card_id)
+    order = Payjp::Customer.retrieve(@card.order_id)
+    @default_card_information = order.cards.retrieve(@card.card_id)
   end
 
   def up
-    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
@@ -52,6 +50,10 @@ class CardsController < ApplicationController
       order = Payjp::Customer.retrieve(card.order_id)
       @default_card_information = order.cards.retrieve(card.card_id)
     end
+  end
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first
   end
 
 end
