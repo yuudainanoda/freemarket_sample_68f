@@ -22,6 +22,14 @@ class Item < ApplicationRecord
   # belongs_to :delivery_date
   # belongs_to :order_status
   # belongs_to :size
+  def reject_both_blank(attributes)
+    if attributes[:id]
+      attributes.merge!(_destroy: "1") if attributes[:face].blank? and attributes[:flip].blank?
+      !attributes[:face].blank? and attributes[:flip].blank?
+    else
+      attributes[:face].blank? and attributes[:flip].blank?
+    end
+  end
 
   validates :name,:price,:description,:deriver_charge,:deriver_date,:category_id,:condition_id,:prefecture_id, presence: true
 
