@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       @order.save
       redirect_to root_path
   else 
-    redirect_to item_path
+    redirect_to item_path(@item)
   end
   end
 
