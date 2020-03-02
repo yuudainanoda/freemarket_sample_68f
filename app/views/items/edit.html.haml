@@ -86,7 +86,7 @@
                     商品の状態
                   .formRequire
                     必須
-                =f.text_field :condition, class: "exhibitInput", placeholder: "例）未使用、新品に近い、目立った汚れ無し"
+                =f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--"
 
           .exhibit__main__itemProfile__inputForm__delivery
             .exhibit__main__itemProfile__inputForm__delivery__leftBox
@@ -101,21 +101,21 @@
                     配送料の負担
                   .formRequire
                     必須
-                =f.text_field :deriver_charge,class: "exhibitInput", placeholder: "例）送料込み（出品者負担）、着払い（購入者負担）"
+                = f.collection_select :deriver_charge_id, DeriverCharge.all, :id, :name, prompt: "--"
               .exhibit__main__itemProfile__inputForm__delivery__formBox__area
                 .exhibit__main__itemProfile__inputForm__delivery__formBox__area__select
                   .notation
                     配送元の地域
                   .formRequire
                     必須
-                =f.text_field :area, class: "exhibitInput", placeholder: "例）東京、大阪、京都、愛知、北海道、福岡"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
               .exhibit__main__itemProfile__inputForm__delivery__formBox__days
                 .exhibit__main__itemProfile__inputForm__delivery__formBox__days__select
                   .notation
                     配送までの日数
                   .formRequire
                     必須
-                =f.text_field :deriver_date, class: "exhibitInput", placeholder: "例）1〜2日以内に発送、4〜7日以内に発送"
+                = f.collection_select :deriver_date_id, DeriverDate.all, :id, :name, prompt: "--"
           .exhibit__main__itemProfile__inputForm__sellPrice
             .exhibit__main__itemProfile__inputForm__sellPrice__leftBox
               .exhibit__main__itemProfile__inputForm__sellPrice__leftBox__title
