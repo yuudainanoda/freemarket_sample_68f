@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # private
 
   def production?
     Rails.env.production?
@@ -17,5 +16,9 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:first_name,:first_name_kana,:last_name,:last_name_kana,:birth_year,:birth_month,:birth_day,street_address_attributes:[:zipcode,:prefecture_id,:city,:building,:address,:telephone,:first_name,:first_name_kana,:last_name,:last_name_kana ]])
+  end
+
+  def after_sign_out_path_for(resource)
+    new_user_session_path
   end
 end
