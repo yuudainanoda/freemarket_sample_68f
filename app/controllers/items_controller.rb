@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_update_params)
+    # binding.pry
     @parents = Category.where(ancestry: nil)
    if @item.update(item_update_params)
       redirect_to root_path
@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
       render "edit"
     end
   end
-
 
   def destroy
     @item.destroy
@@ -70,7 +69,7 @@ class ItemsController < ApplicationController
   end
 
   def item_update_params
-    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition_id,:deriver_charge_id,:prefecture_id,:deriver_date_id,[images_attributes: [:image, :_destroy, :id]]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition_id,:deriver_charge_id,:prefecture_id,:deriver_date_id,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
   end
 
 end

@@ -31,19 +31,20 @@
                         .delete-box
                           .delete-btn
                             %span 削除
-                            =link_to item_path ,class:"delete-btn",method: :delete
+                            -# =link_to item_path ,class:"delete-btn",method: :delete
                 .label-content
-                  = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+                  = f.label :images, for: "item_images_attributes_#{@item.images.length}_image_url", class: "label-box", id: "label-box--#{@item.images.length}" do
                     %pre.label-box__text-visible クリックしてファイルをアップロード
-                .hidden-content
-                  = f.fields_for :images_url do |i|
-
-                    = i.file_field :image_url, class: "hidden-field"
-                    = i.check_box :_destroy, class: "hidden-checkbox"
-
-                  - @item.images.length.upto(4) do |i| 
-                    %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
-
+                    .hidden-content
+                      = f.fields_for :images do |i|
+                        = i.file_field :image_url, class: "hidden-field"
+                        -if i.object.persisted?
+                          = i.check_box :_destroy, data:{ index: i.index },class: "hidden-checkbox"
+                    - if @item.persisted?
+                      .js-file_group(data-index="#{@item.images.count}")
+                        - @item.images.length.upto(4) do |i|
+                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image_url"}
+                        -# = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url]", class: 'js-file', id: "images_attributes_#{i}_image"
           .exhibit__main__itemProfile__inputForm__sellGoods
             .exhibit__main__itemProfile__inputForm__sellGoods__name
               .notation
@@ -161,6 +162,8 @@
             =link_to "#" do
               加盟店規約
             に同意したことになります。
+        
+        
           = f.submit :変更する ,class: "exhibitSubmit1"
           =link_to item_path ,class: "exhibitCancel" do
             キャンセル
