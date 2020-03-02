@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
     @order = Order.new
     @message = Message.new
     @messages = @item.messages.order(id: "ASC").includes(:user)
-    @users = User.find(params[:id]) 
   end
 
   def edit
