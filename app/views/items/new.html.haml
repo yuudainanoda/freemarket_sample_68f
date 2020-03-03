@@ -8,6 +8,7 @@
       .exhibit__main__itemProfile
         .exhibit__main__itemProfile__inputForm
         = form_with(model: @item, local: true) do |f|
+          = render "layouts/error_messages", model: f.object
           .exhibit__main__itemProfile__inputForm__top
             商品の情報を入力      
           .exhibit__main__itemProfile__inputForm__sellImage
