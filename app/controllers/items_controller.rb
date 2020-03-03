@@ -19,7 +19,12 @@ class ItemsController < ApplicationController
      @item = Item.new(item_params)
      if @item.save
       redirect_to root_path
-     else
+    else
+      @parents = Category.where(ancestry: nil)
+      @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
       render "new"
     end
   end
@@ -38,7 +43,7 @@ class ItemsController < ApplicationController
   def update
     # binding.pry
     @parents = Category.where(ancestry: nil)
-   if @item.update(item_update_params)
+    if @item.update(item_update_params)
       redirect_to root_path
     else 
       render "edit"
@@ -70,5 +75,7 @@ class ItemsController < ApplicationController
   def item_update_params
     params.require(:item).permit(:name,:price,:description,:brand,:category_id,:condition_id,:deriver_charge_id,:prefecture_id,:deriver_date_id,[images_attributes: [:image_url, :_destroy, :id]]).merge(user_id:current_user.id)
   end
+
+
 
 end
