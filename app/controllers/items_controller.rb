@@ -39,14 +39,22 @@ class ItemsController < ApplicationController
 
   def edit
     @parents = Category.where(ancestry: nil)
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
   def update
-    # binding.pry
     @parents = Category.where(ancestry: nil)
     if @item.update(item_update_params)
       redirect_to root_path
     else 
+      @parents = Category.where(ancestry: nil)
+      @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
       render "edit"
     end
   end
