@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
     if (parentCategory != "---"){
       $.ajax({
         url: 'get_category_children',
-        type: 'GET','PUT',
+        type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
       })
@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', function() {
     if (childId != "---"){
       $.ajax({
         url: 'get_category_grandchildren',
-        type: 'GET','PUT',
+        type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
       })
